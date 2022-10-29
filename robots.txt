@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /
+
+{{ range .Pages }}
+Disallow: {{ .RelPermalink }}
+{{ end }}

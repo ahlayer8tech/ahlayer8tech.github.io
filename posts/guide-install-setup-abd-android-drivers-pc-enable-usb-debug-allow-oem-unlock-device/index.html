@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction Prerequisites 1. Set Up ADB on PC 1-1 On Windows - Admin Privilege Required 1-2 On Windows - NO Admin Privilege Required 1-3 On Linux - Package 1-4 On Linux - Manual Configuration 2. Configure ADB to work on the Android device 2-1 Enable USB Debugging and Allow OEM Unlocking on the Android device 2-2 Allow USB debugging of the device by the PC 3."/>
+
+    <meta property="og:title" content="Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction Prerequisites 1. Set Up ADB on PC 1-1 On Windows - Admin Privilege Required 1-2 On Windows - NO Admin Privilege Required 1-3 On Linux - Package 1-4 On Linux - Manual Configuration 2. Configure ADB to work on the Android device 2-1 Enable USB Debugging and Allow OEM Unlocking on the Android device 2-2 Allow USB debugging of the device by the PC 3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-06T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am AH, a computer technology, smartphone technology, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated to documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 6, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          14 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/android/">Android</a>
+              <a class="tag" href="/tags/mobile/">mobile</a>
+              <a class="tag" href="/tags/pc/">PC</a>
+              <a class="tag" href="/tags/set-up/">set-up</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#1-set-up-adb-on-pc">1. Set Up ADB on PC</a></li>
+<li><a href="#1-1-on-windows---admin-privilege-required">1-1 On Windows - Admin Privilege Required</a></li>
+<li><a href="#1-2-on-windows---no-admin-privilege-required">1-2 On Windows - NO Admin Privilege Required</a></li>
+<li><a href="#1-3-on-linux---package">1-3 On Linux - Package</a></li>
+<li><a href="#1-4-on-linux---manual-configuration">1-4 On Linux - Manual Configuration</a></li>
+<li><a href="#2-configure-adb-to-work-on-the-android-device">2. Configure ADB to work on the Android device</a></li>
+<li><a href="#2-1-enable-usb-debugging-and-allow-oem-unlocking-on-the-android-device">2-1 Enable USB Debugging and Allow OEM Unlocking on the Android device</a></li>
+<li><a href="#2-2-allow-usb-debugging-of-the-device-by-the-pc">2-2 Allow USB debugging of the device by the PC</a></li>
+<li><a href="#3-install-android-device-driver">3. Install Android Device Driver</a></li>
+<li><a href="#3-1-install-android-device-driver---manually">3-1 Install Android Device Driver - Manually</a></li>
+<li><a href="#4-verifing-adb-and-fastboot-function">4. Verifing ADB and Fastboot function</a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p> 
+ </p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Android Device</li>
+<li>PC - Windows or Linux</li>
+<li>USB Cable for connecting the Androd Device to the PC (USB-C or Micro USB to USB-A)</li>
+<li>Internet Access - to download ADB Platform Tools and Android Device Drivers</li>
+<li>Patience to read the referenced source documentation in each section</li>
+</ul>
+<p> 
+ </p>
+<h2 id="1-set-up-adb-on-pc">1. Set Up ADB on PC</h2>
+<ul>
+<li>In this section you will only be using the PC, but will not use the command prompt.</li>
+</ul>
+<h3 id="1-1-on-windows---admin-privilege-required">1-1 On Windows - Admin Privilege Required</h3>
+<ul>
+<li>In this section ADB will be installed and set up to be runable from anywhere on the PC. ADB files must be manually placed in a folder and manually be added to the enviornment variable in system properties.</li>
+</ul>
+<ol>
+<li>
+<p>Download the latest Platform Tools for Windows from the Android developers website: <a href="https://developer.android.com/studio/releases/platform-tools">https://developer.android.com/studio/releases/platform-tools</a>
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_1.1.png" alt="ADB Install Admin method #1.1">
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_1.2.png" alt="ADB Install Admin method #1.2"></p>
+</li>
+<li>
+<p>Extract the folder from the zip file.
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_2.png" alt="ADB Install Admin method #2"></p>
+</li>
+<li>
+<p>Move the extracted folder to your prefered location on your PC. In this example it will be moved to the root folder of the logged in user.</p>
+</li>
+</ol>
+<p>Recommended to rename the folder from &ldquo;platform-tools&rdquo; to &ldquo;ADB-platform-tools&rdquo;.</p>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code>%USERPROFILE%\Downloads -&gt; %USERPROFILE%\
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_3.png" alt="ADB Install Admin method #3"></p>
+<ol start="4">
+<li>Open Windows Start menu, type &ldquo;About PC&rdquo; and press enter.</li>
+</ol>
+<pre tabindex="0"><code>Win-key &gt; type &quot;about pc&quot; + press enter = About menu
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_4.png" alt="ADB Install Admin method #4"></p>
+<ol start="5">
+<li>Click “Advanced System Settings”. 2nd from the bottom (on right panel).</li>
+</ol>
+<pre tabindex="0"><code>About menu &gt; Advanced System Settings
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_5.png" alt="ADB Install Admin method #5"></p>
+<ol start="6">
+<li>Click “Environment Variables”. At the bootom of the menu.</li>
+</ol>
+<pre tabindex="0"><code>System Properties &gt; Environment Variables
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_6.png" alt="ADB Install Admin method #6"></p>
+<ol start="7">
+<li>For the bottom box labeled &ldquo;System Variables&rdquo;, look for the variable named “Path” and double click it, or single click it to select it and then click the &ldquo;Edit&rdquo; button.</li>
+</ol>
+<p>Best practice would be create a user account specific for Android dev and have ADB only for that users system variables.</p>
+<pre tabindex="0"><code>Environment Variables &gt; Edit Environment Variables
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_7.png" alt="ADB Install Admin method #7"></p>
+<ol start="8">
+<li>
+<p>BEFORE you proceed, ENSURE that NO line that contains text is highlighted. Click on a blank line below the filled with text lines, click “Browse”, and search for the folder where the adb folder is located. Once the desired folder is selected, click &ldquo;OK&rdquo;. 
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_8.1.png" alt="ADB Install Admin method #8.1">
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_8.2.png" alt="ADB Install Admin method #8.2"></p>
+</li>
+<li>
+<p>Verify visually that the correct folder path is now present in this current menu(&ldquo;Edit Environment Variables&rdquo;).
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_9.png" alt="ADB Install Admin method #9"></p>
+</li>
+<li>
+<p>To exit the rest of these menus now that the task of adding the folder path to the system variables is done; click &ldquo;OK&rdquo; to exit the &ldquo;Enviornment Variables&rdquo; menu, and then click &ldquo;OK&rdquo; to exit the &ldquo;Advance System Settings&rdquo; menu.
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_10.1.png" alt="ADB Install Admin method #10.1">
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_10.2.png" alt="ADB Install Admin method #10.2"></p>
+</li>
+<li>
+<p>Check to confirm that the adb and fastboot commands run.</p>
+</li>
+</ol>
+<p>To test this, open a command prompt and type &ldquo;adb version&rdquo;. If it outputs the version number that matches what you downloaded from the website in step 1, then that means that adb/platform tools has been successfully set up on the PC.</p>
+<pre tabindex="0"><code>Win-key &gt; type &quot;cmd&quot; + press enter = command prompt
+
+In command prompt: type &quot;adb version&quot; + press enter = ADB version number output on screen
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_11.png" alt="ADB Install Admin method #11"></p>
+<p> 
+ </p>
+<h3 id="1-2-on-windows---no-admin-privilege-required">1-2 On Windows - NO Admin Privilege Required</h3>
+<ul>
+<li>In this section ADB will be installed in your prefered directory, but it will not runable from anywhere on the PC. ADB files must manually be placed in your prefered folder, where you would run it.</li>
+</ul>
+<ol>
+<li>
+<p>Download the latest Platform Tools for Windows from the Android developers website: <a href="https://developer.android.com/studio/releases/platform-tools">https://developer.android.com/studio/releases/platform-tools</a>
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_1.1.png" alt="ADB Install Non-Admin method #1.1">
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_1.2.png" alt="ADB Install Non-Admin method #1.2"></p>
+</li>
+<li>
+<p>Extract the folder from the zip file.
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_2.png" alt="ADB Install Non-Admin method #2"></p>
+</li>
+<li>
+<p>Move the extracted folder to your prefered location on your PC. In this example it will be moved to the root folder of the logged in user &ldquo;%USERPROFILE%&rdquo;, for simplicity.</p>
+</li>
+</ol>
+<p>Recommended to rename the folder from &ldquo;platform-tools&rdquo; to &ldquo;ADB-platform-tools&rdquo;.</p>
+<pre tabindex="0"><code>%USERPROFILE%\Downloads -&gt; %USERPROFILE%
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_admin_method_3.png" alt="ADB Install Non-Admin method #3"></p>
+<ol start="4">
+<li>Open a command prompt inside the folder you placed the adb-platform-tools in, and type &ldquo;adb version&rdquo;. If it outputs the version number that matches what you downloaded from the website in step 1, then that means that adb/platform tools has been successfully set up on the PC.</li>
+</ol>
+<pre tabindex="0"><code>In the address bar of the ADB-platform-tools folder type &quot;cmd&quot; + press enter = command prompt with ADB functionality
+
+In command prompt: type &quot;adb version&quot; + press enter = ADB version number output on screen
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/adb_install_non-admin_method_4.1.png" alt="ADB Install Non-Admin method #4.1">
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_non-admin_method_4.2.png" alt="ADB Install Non-Admin method #4.1"></p>
+<ol start="5">
+<li>To automate the process of opening the command prompt with adb/platform tools, create a batch script, and the script can be launched from anywhere. Example script text below.</li>
+</ol>
+<pre tabindex="0"><code>start cmd /K &quot;cd %USERPROFILE%\ADB-platform-tools\&quot;
+</code></pre><ul>
+<li>Recomended to name the batch script something obvious like &ldquo;ADB cmd start script.bat&rdquo;
+<img src="/Install_ADB_&amp;_Android_Driver/adb_install_non-admin_method_5.png" alt="ADB Install Non-Admin method #5"></li>
+</ul>
+<p> 
+ </p>
+<h3 id="1-3-on-linux---package">1-3 On Linux - Package:</h3>
+<ul>
+<li>In this section you will only be using the PC.</li>
+<li>This section is <strong>only required for Linux PCs</strong>.</li>
+<li>On Linux PCs USB devices cannot be used as non-root without udev rules being setup for each type of device. The Linux Android device driver comes preinstalled on Linux systems(it is apart of/in the Linux kernel).</li>
+<li>Do not use the adb files from the Ubuntu and Debian package repositories because they will be very outdated, and this may cause errors due to compatability issues with some newer versions of Android.</li>
+<li>As of publication of this guide the packages that will be downloaded are on version 28.0.2+6. Link to check the most recent version <a href="https://pkgs.org/download/android-sdk-platform-tools-common">https://pkgs.org/download/android-sdk-platform-tools-common</a></li>
+</ul>
+<ol>
+<li>Open a terminal and type:</li>
+</ol>
+<ul>
+<li>For Debian, Ubuntu, LinuxMint, &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo apt update
+sudo apt install android-sdk-platform-tools-common
+</code></pre><ul>
+<li>For Fedora &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo dnf install android-tools
+</code></pre><ul>
+<li>For Arch, Manjaro, &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo pacman -Sy
+sudo pacman -S android-udev
+</code></pre><ul>
+<li>The proper tools and settings have been installed and configured after the install has completed.</li>
+</ul>
+<ol start="2">
+<li>Logout of your account, and then log back into your account. The udev rules should now have been initialized on the Linux PC.</li>
+</ol>
+<p> 
+ </p>
+<h3 id="1-4-on-linux---manual-configuration">1-4 On Linux - Manual Configuration:</h3>
+<ul>
+<li>
+<p>This methood of installing ADB has been <strong>deprecated</strong>. The methood in <strong>section 1-3 is recommended</strong> methood of installing adb on Linux PCs.</p>
+</li>
+<li>
+<p>In this section you will only be using the PC.</p>
+</li>
+</ul>
+<p>The adb files from the file repo for a OSs like Ubuntu and LinuxMint will be outdated(by accouple years), and which can cause errors due to compatability issues with newer versions of Android. It is recommended that Linux users use the methood listed below to install the latest adb files.</p>
+<ol>
+<li>
+<p>Download the latest Platform Tools for Linux from the Android developers website: <a href="https://developer.android.com/studio/releases/platform-tools">https://developer.android.com/studio/releases/platform-tools</a></p>
+</li>
+<li>
+<p>Extract the folder from the zip file.</p>
+</li>
+<li>
+<p>Move the extracted folder to your prefered location on your PC. In this example it will be moved to the current user&rsquo;s home directory. Recomended to rename the folder from &ldquo;platform-tools&rdquo; to &ldquo;ADB&rdquo;.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Downloads -&gt; Home directory
+</code></pre><ol start="4">
+<li>Add the path to the PC configuration - On Ubuntu-based distros:</li>
+</ol>
+<p>In the terminal, add &ldquo;export PATH=&quot;$HOME/platform-tools:$PATH&rdquo; or export PATH=&quot;$HOME/ADB:$PATHtext to your .bashrc file (it is recomended to add it to the very end)</p>
+<p>Note: Run the command below in terminal while it is in the home directory.</p>
+<pre tabindex="0"><code>sudo &quot;export PATH=&quot;$HOME/platform-tools:$PATH&quot; &gt;&gt; .bashrc
+</code></pre><p>or</p>
+<pre tabindex="0"><code>sudo &quot;export PATH=&quot;$HOME/ADB:$PATH&quot; &gt;&gt; .bashrc
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol start="5">
+<li>
+<p>Logout of the PC, and then login to the PC.</p>
+</li>
+<li>
+<p>Confirm that the adb and fastboot commands run in the terminal.</p>
+</li>
+</ol>
+<p> 
+ </p>
+<p><strong>Reference Articles for Set Up ADB on a PC:</strong></p>
+<p><a href="https://wiki.lineageos.org/adb_fastboot_guide.html">What is adb? - LineageOS Wiki</a></p>
+<p><a href="https://doc.e.foundation/pages/install-adb-windows">Installing adb and fastboot on Windows PC (w/Pictures) - e Foundation documention</a></p>
+<p><a href="https://doc.e.foundation/pages/install-adb">Installing adb and fastboot on Linux PC - /e/ Foundation documention</a></p>
+<p><a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">Install How to Install ADB on Windows, macOS, and Linux (w/Pictures) by XDA-Developers</a></p>
+<p><a href="https://www.xda-developers.com/adb-fastboot-any-directory-windows-linux/">How to Use ADB or Fastboot From Any Directory on your Windows/Linux PC (w/Pictures) by XDA-Developers</a></p>
+<p> 
+ </p>
+<h2 id="2-configure-adb-to-work-on-the-android-device">2. Configure ADB to work on the Android device</h2>
+<ul>
+<li>
+<p>In this section you will only be using both the PC and the Android device.</p>
+</li>
+<li>
+<p>Confirm that you have completed the section above before continuing with the steps below.</p>
+</li>
+</ul>
+<h3 id="2-1-enable-usb-debugging-and-allow-oem-unlocking-on-the-android-device">2-1 Enable USB Debugging and Allow OEM Unlocking on the Android device</h3>
+<ul>
+<li>In this subsection you will only be using the device.</li>
+</ul>
+<ol>
+<li>
+<p>From the homesreen of the device go the &ldquo;Settings&rdquo; app.
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_1.png" alt="Enable USB Debug & Allow Unlock #1"></p>
+</li>
+<li>
+<p>In the &ldquo;Settings&rdquo; app go to the &ldquo;About Phone&rdquo; menu, located at the bottom in the &ldquo;Settings&rdquo; app.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_2.png" alt="Enable USB Debug & Allow Unlock #2"></p>
+<ol start="3">
+<li>In the &ldquo;About Phone&rdquo; menu go to the &ldquo;Build Number&rdquo;, located near the bottom of the menu, and tap on it 7 times to enable &ldquo;Developer options&rdquo;.
+Note: The device will have pop-up notification giving congratulation for enabling &ldquo;Developer options&rdquo;.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone &gt; Build Number + 7 taps
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.1.png" alt="Enable USB Debug & Allow Unlock #3.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.2.png" alt="Enable USB Debug & Unlock #3.2"></p>
+<ol start="4">
+<li>Go back to the &ldquo;Settings&rdquo; main menu, and go to the &ldquo;Developer options&rdquo; menu, located near the bottom of the &ldquo;Settings&rdquo; app.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.1.png" alt="Enable USB Debug & Allow Unlock #4.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.2.png" alt="Enable USB Debug & Allow Unlock #4.2"></p>
+<ol start="5">
+<li>In the &ldquo;Developer options&rdquo; menu go to <strong>enable</strong> OEM Unlock.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; OEM Unlock &quot;Enable&quot;
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_5.1.png" alt="Enable USB Debug & Allow Unlock #.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_5.2.png" alt="Enable USB Debug & Allow Unlock #.2"></p>
+<ol start="6">
+<li>In the &ldquo;Developer options&rdquo; menu go to <strong>enable</strong> Android debugging.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; Android debugging &quot;Enable&quot;
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_6.1.png" alt="Enable USB Debug & Allow Unlock #6.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_6.2.png" alt="Enable USB Debug & Allow Unlock #4.2"></p>
+<p> 
+ </p>
+<h3 id="2-2-allow-usb-debugging-of-the-device-by-the-pc">2-2 Allow USB debugging of the device by the PC</h3>
+<ul>
+<li>
+<p>In this section you will be using both the PC and the Android device.</p>
+</li>
+<li>
+<p>Confirm that you have completed the section above before continuing with the steps below.</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>Connect the Android device to the PC, using the USB cable.
+<img src="/Install_ADB_&amp;_Android_Driver/allow_usb_debug_by_pc_1.png" alt="Allow USB debug by PC #1"></p>
+</li>
+<li>
+<p>With the device turned on and on the home screen, on the PC, open the command prompt (on Windows) or terminal (on Linux) with adb, and type &ldquo;adb devices&rdquo; and press enter:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>In command prompt: type &quot;adb devices&quot; + press enter
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/allow_usb_debug_by_pc_2.1.png" alt="Allow USB debug by PC #2.1"></p>
+<ul>
+<li>
+<p>On the device screen, Confirm/Accept the RSA key signature message that pops-up on the device&rsquo;s screen. The RSA key is the key of your connected PC. It is recomended to checkmark the &ldquo;Always allow from this computer&rdquo; box to avoid repititons in later proceduares</p>
+</li>
+<li>
+<p>After the RSA key of the PC is accepted, on the PC in the command prompt, the device ADB number will display. Save/write down the device number that is shown for later reference.
+<img src="/Install_ADB_&amp;_Android_Driver/allow_usb_debug_by_pc_2.2.png" alt="Allow USB debug by PC #2.2"></p>
+</li>
+</ul>
+<p> 
+ </p>
+<p><strong>Reference Articles for Configuring ADB to work on Android devices:</strong></p>
+<p><a href="https://doc.e.foundation/pages/enable-usb-debugging">Enable USB Debugging and OEM Unlock - e Foundation documention</a></p>
+<p><a href="https://wiki.lineageos.org/adb_fastboot_guide.html#setting-up-adb">Setting up adb - LineageOS Wiki</a></p>
+<p> 
+ </p>
+<h2 id="3-install-android-device-driver">3. Install Android Device Driver</h2>
+<ul>
+<li>In this section you will be using the PC and the Android device.</li>
+<li>This section is <strong>only required for Windows PCs</strong>. The Linux Android device driver comes preinstalled on Linux systems(it is apart of/in the Linux kernel).</li>
+<li>This section is critical, because it affects fastboot commands functionality (on Windows PCs).</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="3-1-install-android-device-driver---manually">3-1 Install Android Device Driver - Manually</h3>
+<ol>
+<li>
+<p>Before proceeding with the steps below start with section 2-2 above, and then proceed with the steps below.</p>
+</li>
+<li>
+<p>Make sure the device is connected to the PC, turned on, and on the home screen; in the PC open the command prompt with adb and type &ldquo;adb reboot bootloader&rdquo; and press enter. The Android device should reboot into the bootloader (some device may call it fastboot mode instead).</p>
+</li>
+</ol>
+<pre tabindex="0"><code>In command prompt w/adb: type &quot;adb reboot bootloader&quot; + press enter
+</code></pre><ul>
+<li>The Android device should now be in the bootloader, and will not be properly recognized by fastboot comands ran on the PC, because of the missing Android Device driver.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_2.png" alt="Driver Install #2"></li>
+</ul>
+<ol start="3">
+<li>
+<p>Download the Andorid Device Driver files and unzip/extract the files from zip/compressed file. Google Android USB drivers @ <a href="https://developer.android.com/studio/run/win-usb">https://developer.android.com/studio/run/win-usb</a>
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_3.png" alt="Driver Install #3"></p>
+</li>
+<li>
+<p>On the PC, open Windows Start menu, type &ldquo;device manager&rdquo; and press enter.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Win-key &gt; type &quot;device manager&quot; + press enter = Device Manager menu
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/driver_install_4.png" alt="Driver Install #4"></p>
+<ol start="5">
+<li>
+<p>On the PC in Device Manager menu, locate and expand &ldquo;Portable Devices&rdquo; or &ldquo;Other Devices&rdquo;, depending on which is present, and then right-click the name of the device(will be named &ldquo;Android&rdquo; or something else generic(i.e. not your device&rsquo;s actual name)) you connected and select Update Driver Software. Device name is usually just &ldquo;Android&rdquo; when the Android device is in the bootloader and connected to the PC.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_5.1.png" alt="Driver Install #5.1">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_5.2.png" alt="Driver Install #5.2"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, select &ldquo;Browse my computer for drivers&rdquo; (2nd option listed).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_6.png" alt="Driver Install #6"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, select &ldquo;Let me pick from a list of available driver from my computer&rdquo; (2nd option listed).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_7.png" alt="Driver Install #7"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, verify that the &ldquo;Show all devices&rdquo; is highlight, and click Next(on the bottom right).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_8.png" alt="Driver Install #8"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, click &ldquo;Have Disk&rdquo; button.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_9.png" alt="Driver Install #9"></p>
+</li>
+<li>
+<p>In the &ldquo;Install From Disk&rdquo; pop-up click &ldquo;Browse&rdquo;, Navigate to the folder where you extracted the Google USB driver, and select/hightlight the driver, filename is android_winusb.inf, and then click &ldquo;Open&rdquo; in the lower right corner. Then click &ldquo;OK&rdquo;(in upper right corner).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.1.png" alt="Driver Install #10.1">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.2.png" alt="Driver Install #10.2">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.3.png" alt="Driver Install #10.3"></p>
+</li>
+<li>
+<p>In the Driver Update wizard  select/highlight &ldquo;Android Bootloader Interface&rdquo; (2nd option in the list), and click &ldquo;Next&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_11.png" alt="Driver Install #11"></p>
+</li>
+<li>
+<p>A generic warning will pop-up mentioning compatability cannot be verified, but it can be ignored. Continue onto the installation process by clicking &ldquo;Yes&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_12.png" alt="Driver Install #12"></p>
+</li>
+<li>
+<p>Windows Security will display a pop-up asking if you want to install the driver/device software. Click &ldquo;Install&rdquo; to continue the installation process.(You may not get this warning depending on how Windows Security is configured on your PC.)</p>
+</li>
+<li>
+<p>When the install has completed, the Driver Update wizard will display a message stating the driver has been successfully updated. And its name will be changed from &ldquo;Android&rdquo; to &ldquo;Android Bootloader Interface&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_14.png" alt="Driver Install #14"></p>
+</li>
+<li>
+<p>On the PC, in the command prompt with adb type &ldquo;fastboot devices&rdquo; and press enter. The command prompt should output the device id. This device ID should match the device id from the adb devices output, that was in section 2-2.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>In command prompt w/adb: type &quot;fastboot devices&quot; + press enter
+</code></pre><ul>
+<li>If their is an error or the output is not matching restart the PC, and do subsection 2-2 and section 3 step 2 and this step (15) again.
+-If the device id matches, then the Android device driver has sucessfully installed and you can close out of the Device Manager.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_15.1.png" alt="Driver Install #15.1"></li>
+</ul>
+<ol start="16">
+<li>To reboot the device and exit the boatloader/fastboot mode on the device, on the PC in the command prompt with adb type &ldquo;fastboot reboot&rdquo; and press enter.</li>
+</ol>
+<pre tabindex="0"><code>In command prompt w/adb: type &quot;fastboot reboot&quot; + press enter
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/driver_install_16.png" alt="Driver Install #16"></p>
+<p> 
+ </p>
+<p><strong>Reference Articles for Installing Android Device Drivers:</strong></p>
+<p><a href="https://developer.android.com/studio/run/oem-usb">Install OEM USB drivers - Android Developers (Official)</a></p>
+<p><a href="https://developer.android.com/studio/run/win-usb">https://developer.android.com/studio/run/win-usb</a></p>
+<p><a href="https://www.xda-developers.com/download-android-usb-drivers/">Download Android USB Drivers for popular OEMs (w/Pictures) by XDA-Developers</a></p>
+<p><a href="https://www.droidwin.com/android-usb-drivers/">Download and Install Android USB Drivers (w/Pictures) by Droidwin</a></p>
+<p><a href="https://www.droidwin.com/fix-adb-device-not-found-error/#Fix_6_Manually_Install_Drivers">How to fix ADB Device not found - Fix 6: Manually Install Drivers by  Droidwin</a></p>
+<p><a href="https://adb.clockworkmod.com/">Universal ADB Driver by Clockworkmod</a></p>
+<p> 
+ </p>
+<h3 id="4-verifing-adb-and-fastboot-function">4. Verifing ADB and Fastboot function</h3>
+<ul>
+<li>In this subsection you will only be using both the PC and the Android device.</li>
+</ul>
+<ol>
+<li>Check ADB works and is up-to-date on your PC. In the command prompt with adb or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>adb version
+</code></pre><ul>
+<li>If the command fais to run close the command prompt or terminal. Check sections 1-1, 1-2, and/or 1-3 for any steps you may have missed or misconfigured.
+<img src="/Install_ADB_&amp;_Android_Driver/verify_adb_fastboot_1.2.png" alt="Verify ADB & Fastboot #1.2"></li>
+</ul>
+<ol start="2">
+<li>Check ADB works with your device. With the device connnected to the PC and the screen turned on and on the homescreem, in the command prompt with adb or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>adb devices
+</code></pre><ul>
+<li>Save/write down the device number that is shown for reference in followiing steps.
+-On the device, allow the USB debugging by accepting your PC&rsquo;s RSA key fingerprint if prompted too, and rerun the adb devices  command in the command prompt with adb or terminal.
+<img src="/Install_ADB_&amp;_Android_Driver/verify_adb_fastboot_2.2.png" alt="Verify ADB & Fastboot #2.2"></li>
+</ul>
+<ol start="3">
+<li>Reboot into your devices bootloader/fastboot mode. With the device connnected to the PC and the screen turned on and on the homescreem, in the command prompt with adb or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>adb reboot bootloader
+</code></pre><p>-Wait some moments for the command prompt or terminal to process the command and the device to reboot into the bootloader/fastboot mode.
+<img src="/Install_ADB_&amp;_Android_Driver/verify_adb_fastboot_3.2.png" alt="Verify ADB & Fastboot #3.2"></p>
+<ol start="4">
+<li>Check ADB works and is up-to-date on your PC. In the command prompt with adb or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>fastboot --version
+</code></pre><ul>
+<li>If the command fais to run close the command prompt or terminal. Check sections 1-1, 1-2, 1-3, 2-1, 2-2, and/or 3 for any steps you may have missed or misconfigured.
+<img src="/Install_ADB_&amp;_Android_Driver/verify_adb_fastboot_4.2.png" alt="Verify ADB & Fastboot #4.2"></li>
+</ul>
+<ol start="5">
+<li>Check Fastboot works with your device. When the device has finished loading into the bootloader, check that the device is still connected to the PC. Android Device screen may appear off or very dim(that depends on the device manafacturer configuration). In the command prompt or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>fastboot devices
+</code></pre><ul>
+<li>Check that the the device number that is shown matches the device number you saved/wrote down in step 2.
+<img src="/Install_ADB_&amp;_Android_Driver/verify_adb_fastboot_5.2.png" alt="Verify ADB & Fastboot #5.2"></li>
+</ul>
+<ol start="6">
+<li>If the device number matches that means ADB and fastboot are functioning successfully. In the command prompt or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>fastboot reboot
+</code></pre><ul>
+<li>If the device number does not match or does not appear, manually reboot the phone by holding the power button untill the device turns off and then turn the device back on. Check sections 2-1, 2-2, and/or 3 for any steps you may have missed or misconfigured.
+<img src="/Install_ADB_&amp;_Android_Driver/verify_adb_fastboot_6.2.png" alt="Verify ADB & Fastboot #6.2"></li>
+</ul>
+<p> 
+ </p>
+<p><strong>Reference Articles for Configuring ADB to work on Android devices:</strong></p>
+<p><a href="https://doc.e.foundation/pages/enable-usb-debugging">Enable USB Debugging and OEM Unlock - e Foundation documention</a></p>
+<p><a href="https://wiki.lineageos.org/adb_fastboot_guide.html#setting-up-adb">Setting up adb - LineageOS Wiki</a></p>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

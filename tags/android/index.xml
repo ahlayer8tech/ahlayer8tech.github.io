@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Layer 8 Tech Stuff</title>
+    <link>/tags/android/</link>
+    <description>Recent content in Android on Layer 8 Tech Stuff</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide</title>
+      <link>/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction Prerequisites 1. Set Up ADB on PC 1-1 On Windows - Admin Privilege Required 1-2 On Windows - NO Admin Privilege Required 1-3 On Linux - Package 1-4 On Linux - Manual Configuration 2. Configure ADB to work on the Android device 2-1 Enable USB Debugging and Allow OEM Unlocking on the Android device 2-2 Allow USB debugging of the device by the PC 3.</description>
+    </item>
+    
+  </channel>
+</rss>
