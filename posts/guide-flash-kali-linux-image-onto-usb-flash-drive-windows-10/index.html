@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Flash Kali Linux Image onto USB Flash drive on Windows 10 PC - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flash Kali Linux Image onto USB Flash drive on Windows 10 PC - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Pre-preparation Reading 0-2 Download the Necessary Files 0-3 Acquire necessary devices 1. Start BalenaEtcher 2. Select File to Flash 3. Select Target Drive 4. Flash Drive   Introduction This guide intends to provide a step-by-step guide with pictures of how create a bootable Linux usb."/>
+
+    <meta property="og:title" content="Flash Kali Linux Image onto USB Flash drive on Windows 10 PC - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Pre-preparation Reading 0-2 Download the Necessary Files 0-3 Acquire necessary devices 1. Start BalenaEtcher 2. Select File to Flash 3. Select Target Drive 4. Flash Drive   Introduction This guide intends to provide a step-by-step guide with pictures of how create a bootable Linux usb." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-26T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am A.H., a computer technology, smartphones, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated for documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Flash Kali Linux Image onto USB Flash drive on Windows 10 PC - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 26, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/flash/">flash</a>
+              <a class="tag" href="/tags/linux/">Linux</a>
+              <a class="tag" href="/tags/open-source/">open-source</a>
+              <a class="tag" href="/tags/pc/">PC</a>
+              <a class="tag" href="/tags/windows/">Windows</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#0-pre-preparation">0. Pre-preparation</a></li>
+<li><a href="#0-1-pre-preparation-reading">0-1 Pre-preparation Reading</a></li>
+<li><a href="#0-2-download-the-necessary-files">0-2 Download the Necessary Files</a></li>
+<li><a href="#0-3-acquire-necessary-devices">0-3 Acquire necessary devices</a></li>
+<li><a href="#1-start-balenaetcher">1. Start BalenaEtcher</a></li>
+<li><a href="#2-select-file-to-flash">2. Select File to Flash</a></li>
+<li><a href="#3-select-target-drive">3. Select Target Drive</a></li>
+<li><a href="#4-flash-drive">4. Flash Drive</a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p>This guide intends to provide a step-by-step guide with pictures of how create a bootable Linux usb. Some familitarity with file systems is advised before following this guide.</p>
+<p>Balenaetcher portable does not need to installed, and therefore this guide omits the extra steps of installing it.
+ 
+ </p>
+<h2 id="0-pre-preparation">0. Pre-preparation</h2>
+<p> 
+ </p>
+<h3 id="0-1-pre-preparation-reading">0-1 Pre-preparation Reading</h3>
+<p><a href="https://www.kali.org/docs/usb/live-usb-install-with-windows/">Making a Kali Bootable USB Drive on Windows - Kali Docs</a></p>
+<p> 
+ </p>
+<h3 id="0-2-download-the-necessary-files">0-2 Download the Necessary Files</h3>
+<p><a href="https://www.balena.io/etcher/">Image Flasher - BalenaEtcher(Portable)</a></p>
+<p><a href="https://rufus.ie/en/">Image Flasher - alternative - Rufus(not referenced in this guide)</a></p>
+<p><a href="https://www.kali.org/get-kali/#kali-live">Linux ISO - Kali Linux(Live)</a></p>
+<p> 
+ </p>
+<h3 id="0-3-acquire-necessary-devices">0-3 Acquire necessary devices</h3>
+<p>USB flashdrive - if you prefer booting to a live disc(and prefer not installing kali to your PC)</p>
+<ul>
+<li>
+<p><a href="https://www.kali.org/docs/usb/live-usb-install-with-windows/">Making a Kali Bootable USB Drive on Windows - Kali Docs</a></p>
+</li>
+<li>
+<p>Do NOT buy SanDisk USB flashdrives. They get ridiculously hot and will cook themselves after prolonged/continous use.</p>
+</li>
+<li>
+<p>Do NOT buy USB 2.0 flashdrives. They are painfully slowly for pentesting. Buy USB 3.0, 3.1, 3.2, etc&hellip;</p>
+</li>
+<li>
+<p><a href="https://smile.amazon.com/Lexar-JumpDrive-Flash-Drive-LJDS080032G-BNBNU/dp/B08CYCPBMD/">Lexar JumpDrive S80 32GB USB 3.1 - Amazon Smile link</a></p>
+</li>
+</ul>
+<p> 
+ </p>
+<h2 id="1-start-balenaetcher">1. Start BalenaEtcher</h2>
+<ol>
+<li>
+<p>Navigate to the folder where the neccesary files are located.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/start_balenaetcher_1.png" alt="start_balenaetcher 1"></p>
+</li>
+<li>
+<p>Open/run balenaetcher portable by double clicking on it, or right clicking and selecting &ldquo;Open&rdquo;.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/start_balenaetcher_2.png" alt="start_balenaetcher 2"></p>
+</li>
+<li>
+<p>Windows &ldquo;Security Warning&rdquo; pop-up will display on screen. Click &ldquo;Run&rdquo; to allow balenaetcher portable to run.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/start_balenaetcher_3.png" alt="start_balenaetcher 3"></p>
+</li>
+<li>
+<p>Insert the USB flash drive into the computer.</p>
+</li>
+<li>
+<p>Balenaethcer portable should successfull open and present the screen below after accouple seconds.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/start_balenaetcher_5.png" alt="start_balenaetcher 5"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="2-select-file-to-flash">2. Select File to Flash</h2>
+<ol>
+<li>Click on the &ldquo;Flash from File&rdquo; on the left of the menu to select the ISO to flash onto the USB flash drive.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/select_file_1.1.png" alt="select file 1">
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/select_file_1.2.png" alt="select file 2">
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/select_file_1.3.png" alt="select file 3">
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/select_file_1.4.png" alt="select file 4"></li>
+</ol>
+<p> 
+ </p>
+<h2 id="3-select-target-drive">3. Select Target Drive</h2>
+<ol>
+<li>Confirm the prefered USB flash drive is the selected option. Click on &ldquo;change&rdquo; in the center of the menu to view the drives available to flash menu.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/select_target_drive_1.1.png" alt="select target drive 1">
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/select_target_drive_1.2.png" alt="select target drive 2"></li>
+</ol>
+<p> 
+ </p>
+<h2 id="4-flash-drive">4. Flash Drive</h2>
+<ol>
+<li>
+<p>To flash the USB flash drive with the Linux ISO image, Click on &ldquo;Flash!&rdquo; on the right of the menu.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/flash_the_drive_1.png" alt="flash the drive 1"></p>
+</li>
+<li>
+<p>Windows UAC &ldquo;User Account Control&rdquo; pop-up will display on screen. Enter your credentials, and click &ldquo;Yes&rdquo; to allow balenaetcher portable to begin flashing.</p>
+</li>
+</ol>
+<ul>
+<li>Wait for the program to verify the ISO image, flash the file onto the USB flash drive, and then verify the files that where flashed onto usb flash drive.</li>
+<li>The time of completion depends on the ISO file size and the USB transfer speeds.
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/flash_the_drive_2.1.png" alt="flash the drive 2.1">
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/flash_the_drive_2.2.png" alt="flash the drive 2.2">
+<img src="/Flash_Kali_Linux_Image_USB_Drive_W10/flash_the_drive_2.3.png" alt="flash the drive 2.3"></li>
+<li>When the message above displays the flashing is done, and you can now confidently go to using the USB flash drive as you intend.</li>
+</ul>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

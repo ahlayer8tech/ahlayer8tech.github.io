@@ -6,7 +6,17 @@
     <description>Recent content in PC on Layer 8 Tech Stuff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/pc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/pc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flash Kali Linux Image onto USB Flash drive on Windows 10 PC - Guide</title>
+      <link>/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Pre-preparation Reading 0-2 Download the Necessary Files 0-3 Acquire necessary devices 1. Start BalenaEtcher 2. Select File to Flash 3. Select Target Drive 4. Flash Drive   Introduction This guide intends to provide a step-by-step guide with pictures of how create a bootable Linux usb.</description>
+    </item>
+    
     <item>
       <title>Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide</title>
       <link>/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/</link>

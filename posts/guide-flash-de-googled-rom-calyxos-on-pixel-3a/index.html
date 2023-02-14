@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Flash De-Googled ROM CalyxOS on a Pixel 3a - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flash De-Googled ROM CalyxOS on a Pixel 3a - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Back-up your data from the Android device 0-2 Download the Necessary Files 1. Enable USB Debugging and Allow OEM Unlocking on the Android device 2. Install Android Device Driver - Windows Only - Manually 3. Install Android Platform Tools - Linux Only 4."/>
+
+    <meta property="og:title" content="Flash De-Googled ROM CalyxOS on a Pixel 3a - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Back-up your data from the Android device 0-2 Download the Necessary Files 1. Enable USB Debugging and Allow OEM Unlocking on the Android device 2. Install Android Device Driver - Windows Only - Manually 3. Install Android Platform Tools - Linux Only 4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-flash-de-googled-rom-calyxos-on-pixel-3a/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-22T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am A.H., a computer technology, smartphones, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated for documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Flash De-Googled ROM CalyxOS on a Pixel 3a - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 22, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          13 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/android/">Android</a>
+              <a class="tag" href="/tags/mobile/">mobile</a>
+              <a class="tag" href="/tags/privacy/">privacy</a>
+              <a class="tag" href="/tags/open-source/">open-source</a>
+              <a class="tag" href="/tags/debloated/">debloated</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<!-- raw HTML omitted -->
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#0-pre-preparation">0. Pre-preparation</a></li>
+<li><a href="#0-1-back-up-your-data-from-the-android-device">0-1 Back-up your data from the Android device</a></li>
+<li><a href="#0-2-download-the-necessary-files">0-2 Download the Necessary Files</a></li>
+<li><a href="#1-enable-usb-debugging-and-allow-oem-unlocking-on-the-android-device">1. Enable USB Debugging and Allow OEM Unlocking on the Android device</a></li>
+<li><a href="#2-install-android-device-driver---windows-only---manually">2. Install Android Device Driver - Windows Only - Manually</a></li>
+<li><a href="#3-install-android-platform-tools---linux-only">3. Install Android Platform Tools - Linux Only</a></li>
+<li><a href="#4-verify-device-flasher-executable-and-calyxos-image">4. Verify device-flasher executable and CalyxOS Image</a></li>
+<li><a href="#5-install-the-calyxos-image-onto-the-android-device">5. Install the CalyxOS Image onto the Android device</a></li>
+<li><a href="#6-post-setup-actions">6. Post Setup Actions</a></li>
+<li><a href="#6-1-encrypt-the-device">6-1 Encrypt the Device</a></li>
+<li><a href="#6-2-change-to-a-privacy-respecting-dns">6-2 Change to a Privacy Respecting DNS</a></li>
+<li><a href="#6-3-download-your-apps">6-3 Download Your Apps</a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p> 
+ </p>
+<h2 id="0-pre-preparation">0. Pre-preparation</h2>
+<p><strong>Reference Documentation for Installing CalyxOS:</strong></p>
+<p><a href="https://calyxos.org/install/devices/sargo/windows/">Install CalyxOS on Pixel 3A from a Windows PC</a></p>
+<p><a href="https://calyxos.org/install/devices/sargo/linux/">Install CalyxOS on Pixel 3A from a Linux PC</a></p>
+<p><a href="https://youtu.be/cgpAvce1mLI">How to install CalyxOS on Android using Microsoft Windows (Google&rsquo;s Pixels) by Side of Burritos</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> 
+ </p>
+<h3 id="0-1-back-up-your-data-from-the-android-device">0-1 Back-up your data from the Android device</h3>
+<ul>
+<li>
+<p>Back-up your data to a a external USB drive or Micro SD card for safe keeping, and to restore from when setting up the device.</p>
+</li>
+<li>
+<p>Valuable data you should back-up includes: apps, app accounts/profiles, pictures, videos, texts, emails, online login info and passwords, 2FA backup files, etc&hellip;</p>
+</li>
+</ul>
+<p> 
+ </p>
+<h3 id="0-2-download-the-necessary-files">0-2 Download the Necessary Files</h3>
+<ul>
+<li>In this section you will only be using the PC.</li>
+</ul>
+<p><a href="https://release.calyxinstitute.org/device-flasher/1.0.4/device-flasher.exe">CalyxOS device-flasher .exe file</a></p>
+<p><a href="https://release.calyxinstitute.org/sargo-factory-22305010.zip">CalyxOS Pixel 3A Sargo ROM/Image</a></p>
+<p>Save the device-flasher executable and CalyxOS image in the same directory as each other. Do not extract or rename the CalyxOS image zip file, simply copy it as-is.</p>
+<p><img src="/Install_CalyxOS_on_Pixel_3a/download_device-flasher_image_1.1.png" alt="Download device-flasher & image #1.1">
+<img src="/Install_CalyxOS_on_Pixel_3a/download_device-flasher_image_1.2.png" alt="Download device-flasher & image #1.2"></p>
+<p> 
+ </p>
+<h2 id="1-enable-usb-debugging-and-allow-oem-unlocking-on-the-android-device">1. Enable USB Debugging and Allow OEM Unlocking on the Android device</h2>
+<ul>
+<li>In this subsection you will only be using the device.</li>
+</ul>
+<ol>
+<li>
+<p>From the homesreen of the device go the &ldquo;Settings&rdquo; app.
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_1.png" alt="Enable USB Debug & Allow Unlock #1"></p>
+</li>
+<li>
+<p>In the &ldquo;Settings&rdquo; app go to the &ldquo;About Phone&rdquo; menu, located at the bottom in the &ldquo;Settings&rdquo; app.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_2.png" alt="Enable USB Debug & Allow Unlock #2"></p>
+<ol start="3">
+<li>In the &ldquo;About Phone&rdquo; menu go to the &ldquo;Build Number&rdquo;, located near the bottom of the menu, and tap on it 7 times to enable &ldquo;Developer options&rdquo;.
+Note: The device will have pop-up notification giving congratulation for enabling &ldquo;Developer options&rdquo;.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone &gt; Build Number + 7 taps
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.1.png" alt="Enable USB Debug & Allow Unlock #3.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.2.png" alt="Enable USB Debug & Unlock #3.2"></p>
+<ol start="4">
+<li>Go back to the &ldquo;Settings&rdquo; main menu, and go to the &ldquo;Developer options&rdquo; menu, located near the bottom of the &ldquo;Settings&rdquo; app.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.1.png" alt="Enable USB Debug & Allow Unlock #4.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.2.png" alt="Enable USB Debug & Allow Unlock #4.2"></p>
+<ol start="5">
+<li>In the &ldquo;Developer options&rdquo; menu go to <strong>enable</strong> OEM Unlock.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; OEM Unlock &quot;Enable&quot;
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_5.1.png" alt="Enable USB Debug & Allow Unlock #.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_5.2.png" alt="Enable USB Debug & Allow Unlock #.2"></p>
+<ol start="6">
+<li>In the &ldquo;Developer options&rdquo; menu go to <strong>enable</strong> Android debugging.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; Android debugging &quot;Enable&quot;
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_6.1.png" alt="Enable USB Debug & Allow Unlock #6.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_6.2.png" alt="Enable USB Debug & Allow Unlock #4.2"></p>
+<p> 
+ </p>
+<h2 id="2-install-android-device-driver---windows-only---manually">2. Install Android Device Driver - Windows Only - Manually</h2>
+<ul>
+<li>In this section you will be using the PC and the Android device.</li>
+<li>This section is <strong>only required for Windows PCs</strong>. The Linux Android device driver comes preinstalled on Linux systems(it is apart of/in the Linux kernel).</li>
+<li>This section is critical, because it affects the device flasher-executable functionality (only on Windows PCs).</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol>
+<li>Power off/shutdown the Android device. To boot the Android device into the bootloader/fastboot/mode. <em>Press and hold</em> the <em>volume down button</em> and <em>power button</em> at the <em>same time</em>, and release the buttons when the phone vibrates and the screen loads into the bootloader/fastboot mode.</li>
+</ol>
+<pre tabindex="0"><code>volume down button long press + power button long press + at the same time = boot device into bootloader/fastboot mode
+</code></pre><ol start="2">
+<li>Connect the device to your PC via USB charging cable.</li>
+</ol>
+<ul>
+<li>Your PC will not recognize the device, and that is OK.</li>
+<li>The follwoing steps wil install the Android device driver that makes it so your PC will recognize the android device while it is in bootloader/fastboot mode.
+<img src="/Install_CalyxOS_on_Pixel_3a/driver_install_2.jpg" alt="Driver Install 2"></li>
+</ul>
+<ol start="3">
+<li>
+<p>Download the Andorid Device Driver files and unzip/extract the files from zip/compressed file. Google Android USB drivers @ <a href="https://developer.android.com/studio/run/win-usb">https://developer.android.com/studio/run/win-usb</a>
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_3.png" alt="Driver Install #3"></p>
+</li>
+<li>
+<p>On the PC, open Windows Start menu, type &ldquo;device manager&rdquo; and press enter.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Win-key &gt; type &quot;device manager&quot; + press enter = Device Manager menu
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/driver_install_4.png" alt="Driver Install #4"></p>
+<ol start="5">
+<li>
+<p>On the PC in Device Manager menu, locate and expand &ldquo;Portable Devices&rdquo; or &ldquo;Other Devices&rdquo;, depending on which is present, and then right-click the name of the device(will be named &ldquo;Android&rdquo; or something else generic(i.e. not your device&rsquo;s actual name)) you connected and select Update Driver Software. Device name is usually just &ldquo;Android&rdquo; when the Android device is in the bootloader and connected to the PC.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_5.1.png" alt="Driver Install #5.1">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_5.2.png" alt="Driver Install #5.2"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, select &ldquo;Browse my computer for drivers&rdquo; (2nd option listed).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_6.png" alt="Driver Install #6"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, select &ldquo;Let me pick from a list of available driver from my computer&rdquo; (2nd option listed).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_7.png" alt="Driver Install #7"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, verify that the &ldquo;Show all devices&rdquo; is highlight, and click Next(on the bottom right).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_8.png" alt="Driver Install #8"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, click &ldquo;Have Disk&rdquo; button.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_9.png" alt="Driver Install #9"></p>
+</li>
+<li>
+<p>In the &ldquo;Install From Disk&rdquo; pop-up click &ldquo;Browse&rdquo;, Navigate to the folder where you extracted the Google USB driver, and select/hightlight the driver, filename is android_winusb.inf, and then click &ldquo;Open&rdquo; in the lower right corner. Then click &ldquo;OK&rdquo;(in upper right corner).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.1.png" alt="Driver Install #10.1">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.2.png" alt="Driver Install #10.2">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.3.png" alt="Driver Install #10.3"></p>
+</li>
+<li>
+<p>In the Driver Update wizard  select/highlight &ldquo;Android Bootloader Interface&rdquo; (2nd option in the list), and click &ldquo;Next&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_11.png" alt="Driver Install #11"></p>
+</li>
+<li>
+<p>A generic warning will pop-up mentioning compatability cannot be verified, but it can be ignored. Continue onto the installation process by clicking &ldquo;Yes&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_12.png" alt="Driver Install #12"></p>
+</li>
+<li>
+<p>Windows Security will display a pop-up asking if you want to install the driver/device software. Click &ldquo;Install&rdquo; to continue the installation process.(You may not get this warning depending on how Windows Security is configured on your PC.)</p>
+</li>
+<li>
+<p>When the install has completed, the Driver Update wizard will display a message stating the driver has been successfully updated. And its name will be changed from &ldquo;Android&rdquo; to &ldquo;Android Bootloader Interface&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_14.png" alt="Driver Install #14"></p>
+</li>
+<li>
+<p><strong>Reboot the device</strong>, before proceeding.</p>
+</li>
+</ol>
+<p> 
+ </p>
+<p><strong>Reference Articles for Installing Android Device Drivers:</strong></p>
+<p><a href="https://developer.android.com/studio/run/oem-usb">Install OEM USB drivers - Android Developers (Official)</a></p>
+<p><a href="https://www.xda-developers.com/download-android-usb-drivers/">Download Android USB Drivers for popular OEMs (w/Pictures) by XDA-Developers</a></p>
+<p><a href="https://www.droidwin.com/android-usb-drivers/">Download and Install Android USB Drivers (w/Pictures) by Droidwin</a></p>
+<p><a href="https://www.droidwin.com/fix-adb-device-not-found-error/#Fix_6_Manually_Install_Drivers">How to fix ADB Device not found - Fix 6: Manually Install Drivers by  Droidwin</a></p>
+<p> 
+ </p>
+<h2 id="3-install-android-platform-tools---linux-only">3. Install Android Platform Tools - Linux Only</h2>
+<ul>
+<li>In this section you will only be using the PC.</li>
+<li>This section is <strong>only required for Linux PCs</strong>.</li>
+<li>On Linux PCs USB devices cannot be used as non-root without udev rules being setup for each type of device. The Linux Android device driver comes preinstalled on Linux systems(it is apart of/in the Linux kernel).</li>
+<li>Do not use the adb files from the Ubuntu and Debian package repositories because they will be very outdated, and this may cause errors due to compatability issues with some newer versions of Android.</li>
+<li>As of publication of this guide the packages that will be downloaded are on version 28.0.2+6. Link to check the most recent version <a href="https://pkgs.org/download/android-sdk-platform-tools-common">https://pkgs.org/download/android-sdk-platform-tools-common</a></li>
+</ul>
+<ol>
+<li>Open a terminal and type:</li>
+</ol>
+<ul>
+<li>For Debian, Ubuntu, LinuxMint, &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo apt update
+sudo apt install android-sdk-platform-tools-common
+</code></pre><ul>
+<li>For Fedora &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo dnf install android-tools
+</code></pre><ul>
+<li>For Arch, Manjaro, &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo pacman -Sy
+sudo pacman -S android-udev
+</code></pre><ul>
+<li>The proper tools and settings have been installed and configured after the install has completed.</li>
+</ul>
+<ol start="2">
+<li>Logout of your account, and then log back into your account. The udev rules should now have been initialized on the Linux PC.</li>
+</ol>
+<p><strong>Reference Articles for Linux ADB Tools as Non-root:</strong></p>
+<p><a href="https://grapheneos.org/install/web#flashing-as-non-root">Flashing as non-root - GrapheneOS Docs</a></p>
+<p> 
+ </p>
+<h2 id="4-verify-device-flasher-executable-and-calyxos-image">4. Verify device-flasher executable and CalyxOS Image</h2>
+<ul>
+<li>In this section you will only be using the PC.</li>
+<li>These following steps presume you are using a Windows PC, but Linux commands are included too.</li>
+</ul>
+<ol>
+<li>To verify the device-flasher is good to go, open a command prompt(with adb) in the folder the files are located in, or navigate to the folder where the files are located, and type:</li>
+</ol>
+<pre tabindex="0"><code>CertUtil -hashfile device-flasher.exe SHA256
+</code></pre><ul>
+<li>If on a Linux PC, open a terminal and navigate to the directory where the files are located and type:</li>
+</ul>
+<pre tabindex="0"><code>sha256sum device-flasher.linux
+</code></pre><p><img src="/Install_CalyxOS_on_Pixel_3a/verify_device-flasher_image_1.1.png" alt="Verify device-flasher & image #1.1">
+<img src="/Install_CalyxOS_on_Pixel_3a/verify_device-flasher_image_1.2.png" alt="Verify device-flasher & image #1.2">
+<img src="/Install_CalyxOS_on_Pixel_3a/verify_device-flasher_image_1.3.png" alt="Verify device-flasher & image #1.3">
+<img src="/Install_CalyxOS_on_Pixel_3a/verify_device-flasher_image_1.4.png" alt="Verify device-flasher & image #1.4"></p>
+<ol start="2">
+<li>Confirm the device-flasher hash value from the above command matches this hash value:</li>
+</ol>
+<pre tabindex="0"><code>87b719cb217b3dba69f061da0c3e5ce6ebabea81e15394ca4c36b584b5b3f19d
+</code></pre><ul>
+<li>If checking the Linux device-flasher,confirm hash value from the above command matches this hash value:</li>
+</ul>
+<pre tabindex="0"><code>5367712159b76e06bdca04f9feafc6391e26ffbc197ef7d2f686ced15941874e
+</code></pre><ul>
+<li>If it doesn’t match, then you have a corrupted or incorrect file. Download a new company from the appropriate link.</li>
+</ul>
+<ol start="3">
+<li>To verify the CalyxOS image file(.zip) is good to go, in the command prompt(with adb) type:</li>
+</ol>
+<pre tabindex="0"><code>CertUtil -hashfile sargo-factory-22305010.zip SHA256
+</code></pre><ul>
+<li>If on a Linux PC, to verify the CalyxOS image file(.zip) is good to go, in the terminal type:</li>
+</ul>
+<pre tabindex="0"><code>sha256sum sargo-factory-22305010.zip
+</code></pre><p><img src="/Install_CalyxOS_on_Pixel_3a/verify_device-flasher_image_3.png" alt="Verify device-flasher & image #3"></p>
+<ol start="4">
+<li>Confirm the CalyxOS image file(.zip) hash value from the above command matches this hash value:</li>
+</ol>
+<pre tabindex="0"><code>07a869dae266f747afbf8dfeeb418612ea7e22d5fd663382c23380eb587c7ea7
+</code></pre><ul>
+<li>If it doesn’t match, then you have a corrupted or incorrect file. Download a new company from the appropriate link.</li>
+</ul>
+<ol start="5">
+<li>If the hash values correctly match, then proceed to section 2.</li>
+</ol>
+<p> 
+ </p>
+<h2 id="5-install-the-calyxos-image-onto-the-android-device">5. Install the CalyxOS Image onto the Android device</h2>
+<ul>
+<li>In this section you will be using both the PC and the device.</li>
+<li>These following steps presume you are using a Windows PC, but Linux commands are included too.</li>
+</ul>
+<ol>
+<li>
+<p>Connect the device to your PC via USB charging cable. Make sure the device is turned on and on the home screen.</p>
+</li>
+<li>
+<p>On the PC, run the device-flasher executable. Either <em>double-click</em> the executable or <em>right click on it and select open</em>. A command prompt will pop-up and showing the device-flasher program running.</p>
+</li>
+</ol>
+<ul>
+<li>The PC&rsquo;s anti-virus may falsely flag the device-flasher executable as infected. This is because the program is written in the Go program language, which anti-viruses are confused by. If the device-flasher executable is flagged by your anti-virus, allow it and make a exclusion for the device-flasher and/or the folder that the file is located in. <a href="https://go.dev/doc/faq#virus">Why anti-virus thinks Go programs are infected? - Golang Docs</a>
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_2.1.png" alt="Install Image #2.1">
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_2.2.png" alt="Install Image #2.2"></li>
+</ul>
+<ol start="2">
+<li>If on a Linux PC, open a terminal and navigate to the directory where the files are located and type:</li>
+</ol>
+<pre tabindex="0"><code>chmod +x device-flasher.linux
+./device-flasher.linux
+</code></pre><ul>
+<li>All other steps following steps are the same regardless of if on Windows or Linux.</li>
+</ul>
+<ol start="3">
+<li>After the program finishes it&rsquo;s initial run, in that command prompt it will display the message (separated from the initial run notices) saying <em>Press ENTER to continue</em>. Press the enter key to continue to the next step in the program.</li>
+</ol>
+<pre tabindex="0"><code>Press ENTER to continue + ENTER key press = move next step in program
+</code></pre><ul>
+<li>The program will check all devices connected to PC to find and establish a connection with the android device.
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_3.png" alt="Install Image #3"></li>
+</ul>
+<ol start="4">
+<li>When the program has found and established a connection to the device, in that command prompt it will display the message (separated from the detected device codename with device serial number) saying <em>Press ENTER to continue</em>. Verify that device is the device you intend on installing the image, and then press the enter key to continue to the next step in the program.</li>
+</ol>
+<pre tabindex="0"><code>Press ENTER to continue + ENTER key press = move next step in program
+</code></pre><ul>
+<li>After confirming your device, then it will reboot the phone into the bootloader/fastboot mode.</li>
+<li>After rebooting into the bootloader/fastboot mode the program, on the PC, will advise how to unlock the bootloader, that must be done manually.
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_4.png" alt="Install Image #4"></li>
+</ul>
+<ol start="5">
+<li>On the device select the option to unlock the bootloader. Press <em>volume down button</em> to select <em>UNLOCK THE BOOTLOADER</em> option, and then press the <em>power button</em> to confirm that option.</li>
+</ol>
+<pre tabindex="0"><code>volume down button press -&gt; UNLOCK THE BOOTLOADER + power button press = confirmation to allow unlocking of device bootloader
+</code></pre><ul>
+<li>The CalyxOS image instllation process begins after you authorize the bootloader unlock on the device.</li>
+<li>It will take some time for the bootloader to unlock.</li>
+<li>After the bootloader is unlocked, the program will proceed to install the CalyxOS image onto the android device. <strong>DO NOT</strong> do anything to that command prompt, let it run. The image install will take awhile to run.</li>
+<li>On the device, while the installation is happening, the device will reboot serveral times and the screen will flash and change to several different menus. <strong>DO NOT</strong> touch the phone during this time.</li>
+<li>The image install process will take awhile to run.
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_5.1.png" alt="Install Image #5.1">
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_5.2.jpg" alt="Install Image #5.2">
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_5.3.jpg" alt="Install Image #5.3"></li>
+</ul>
+<ol start="6">
+<li>The installation has completed when the command prompt of the program dispalys the message &ldquo;6. Please use the volume and power keys on the device to lock the boatloader&rdquo;.</li>
+</ol>
+<ul>
+<li>On the device select the option to lock the bootloader. Press <em>volume down button</em> to select <em>LOCK THE BOOTLOADER</em> option, and then press the <em>power button</em> to confirm that option.</li>
+</ul>
+<pre tabindex="0"><code>volume down button press -&gt; LOCK THE BOOTLOADER + power button press = confirmation to allow locking of device bootloader
+</code></pre><ul>
+<li>It will take some time for the bootloader to lock.</li>
+<li>On the device, the bootloader lock status will change from unlocked (red text) to locked (green text).
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_6.1.png" alt="Install Image #6.1">
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_6.2.jpg" alt="Install Image #6.2">
+<img src="/Install_CalyxOS_on_Pixel_3a/install_image_6.3.jpg" alt="Install Image #6.3"></li>
+</ul>
+<ol start="8">
+<li>If no errors have popped-up during the the install process then that means GrapheneOS has been successfully completed. Press the power button with the default Start option selected in the bootloader menu to boot into the OS. Proceed to the next section.</li>
+</ol>
+<p> 
+ </p>
+<h2 id="6-post-setup-actions">6. Post Setup Actions</h2>
+<ul>
+<li>Taking these following actions significantly boosts your privacy and security when you use the Android device.</li>
+</ul>
+<p> 
+ </p>
+<h2 id="6-1-encrypt-the-device">6-1 Encrypt the Device</h2>
+<ul>
+<li>
+<p>On newer versions of the CalyxOS image files the phone will encrypt itself on the initial setup of the device. If your device is already encrypted when you check encryption status, you do not need to proceed to this section.</p>
+</li>
+<li>
+<p>In this section you will only be using the device, and will need to plug it into the charger.</p>
+</li>
+<li>
+<p>If you have not already set a passcode for your device, one will be setup one in this section. <em>A encrypted device without a passcode is just silly.</em></p>
+</li>
+<li>
+<p>We will be doing a full-disk encryption as that is the most pravcy protecting encryption type for a device.</p>
+</li>
+<li>
+<p><strong>Warning:</strong> Disruptions during the encryption process may cause errors or raise issues. Disconnect and turn off the WiFi and set the device to airplane mode to avoid those issues.</p>
+</li>
+<li>
+<p><strong>Warning:</strong> If you are prone to loosing you device and do have have a consistent back-up policy it is not advised to do full-disk encryption on the device because Find-My-Device services will not work if the device is turned off.</p>
+</li>
+<li>
+<p><strong>Warning:</strong> Alarms - When the the device is turned off and has full disc encryption, Alarms will not work, because the Clock app will not be able to decrypt the Android Device.</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>Plugin your charging cable to the device and a power source. The device battery needs to be at or above 80% full before you begin.</p>
+</li>
+<li>
+<p>On the device, In the &ldquo;Developer Options&rdquo; set &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo;. Note: If you do not set the device&rsquo;s &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo; the rest of these following steps will not work.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Security &gt; Encryption &gt; Encrypt phone
+</code></pre><p> 
+ </p>
+<p><strong>Reference Articles for Encrypting Android Devices:</strong>
+<a href="https://source.android.com/security/encryption/">Encryption - Android Source</a></p>
+<p><a href="https://docs.microsoft.com/en-us/mem/intune/user-help/encrypt-your-device-android">Encrypting your Android device - Microsoft Docs</a></p>
+<p><a href="https://www.hexnode.com/blogs/everything-you-need-to-know-about-android-encryption/">Everything you need to know about Android encryption - Hexnode</a></p>
+<p> 
+ </p>
+<h2 id="6-2-change-to-a-privacy-respecting-dns">6-2 Change to a Privacy Respecting DNS</h2>
+<ul>
+<li>In this section you will only be using the device.
+-Adblocking is a crtical part of on device privacy because 1st and 3rd party internet and app trackers can collect alot of data about you, your habbits, who you associate with, and more.</li>
+</ul>
+<ol>
+<li>
+<p>Open the devices Settings.</p>
+</li>
+<li>
+<p>Navigate to Network &amp; Internet &gt; Advanced &gt; Private DNS.</p>
+</li>
+<li>
+<p>Select Private DNS provider hostname.</p>
+</li>
+<li>
+<p>In the textbox, type in your prefered DNS choice from the ones listed below, and click &ldquo;Save&rdquo;. (I recomend Mullvad, Adguard, or AhaDNS.)</p>
+</li>
+</ol>
+<p> 
+ </p>
+<p><strong>Reference Articles for Changing to a Privacy Respecting DNS:</strong></p>
+<!-- raw HTML omitted -->
+<p><a href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/">Setup DNS over HTTPS and DNS over TLS - Mullvad</a></p>
+<p><a href="https://adguard-dns.com/en/public-dns.html">Connecting to a public AdGuard DNS server - Adguard</a></p>
+<p><a href="https://github.com/AhaDNS/setup-guides/blob/master/Android/Android.md">AhaDNS Android setup guide - AhaDNS</a></p>
+<p><a href="https://support.quad9.net/hc/en-us/articles/360046736911-Configure-Android-to-use-Private-DNS-feature-with-Quad9">Configure Android to use Private DNS feature with Quad9 (9.9.9.9) - Quad9 Support</a></p>
+<p><a href="https://developers.cloudflare.com/1.1.1.1/setting-up-1.1.1.1/android">Setting Up Cloudflare (1.1.1.1) DNS on Android - Cloudflare Documentaion</a></p>
+<p> 
+ </p>
+<h2 id="6-3-download-your-apps">6-3 Download Your Apps</h2>
+<p>If you have been using the basic default apps that where on your Googleified smartphone, then you should be able to use the basic default apps on your now De-Goolged smartphone. Basic non-Google apps come preinstalled on all De-Goolged ROM(aka OS).</p>
+<p>-When setting up CalyxOS, you can choose the apps you would like installed on the device. For your conveince you should choose to install MicroG during the setup process of CalyxOS.</p>
+<ul>
+<li>
+<p>If you do not find a app you need preinstalled on the device, then you must download it or an alternative to it from an app store, prefereably a privacy respecting appstore or frontend.</p>
+</li>
+<li>
+<p>You can check app compatibility with MicroG, refer to the community curated list from Techlore&rsquo;s Project Plexus @ <a href="https://plexus.techlore.tech/">https://plexus.techlore.tech/</a></p>
+</li>
+<li>
+<p>Note CalyxOS only come with F-Droid appstore. So if you want to download any non-FOSS apps, you will need to download Aurora Store (a private Google Play appstore frontend) through F-Droid, or have it install it during setup, or install the Amazon AppStore. Alternatively, you can download the specific individual app apk from <a href="https://www.apkmirror.com/">APK Mirror</a>, and install the app apk manually on to the device.</p>
+</li>
+</ul>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

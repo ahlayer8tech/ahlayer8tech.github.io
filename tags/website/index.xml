@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>website on Layer 8 Tech Stuff</title>
+    <link>/tags/website/</link>
+    <description>Recent content in website on Layer 8 Tech Stuff</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create &amp; Publish a Github Pages website - Guide</title>
+      <link>/posts/guide-publish-create-github-pages-site/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-publish-create-github-pages-site/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation reading 1. Login onto GitHub 2. Creating a repository for the site 3. Creating the test site 4. Uploading your website files and folders   Introduction This guide intends to provide a step-by-step guide with pictures of how to publish a GitHub Pages website and create the corresponding repository for it.</description>
+    </item>
+    
+  </channel>
+</rss>

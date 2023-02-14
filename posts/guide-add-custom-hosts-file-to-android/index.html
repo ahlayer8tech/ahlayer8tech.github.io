@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Adding a Custom Hosts File to Android - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Adding a Custom Hosts File to Android - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Prologue Introduction 0. Pre-preparation 0-1 Download the Necessary Files 0-2 Confirm ADB and Android Device Drivers Installed and Functioning 7-1 Add a Custom Hosts File    Prologue I have been serious about modifying my personal devices since 2017. Over the years I hadn’t found a guide that went over all the technical steps that I wanted, so I wrote my own guide."/>
+
+    <meta property="og:title" content="Adding a Custom Hosts File to Android - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Prologue Introduction 0. Pre-preparation 0-1 Download the Necessary Files 0-2 Confirm ADB and Android Device Drivers Installed and Functioning 7-1 Add a Custom Hosts File    Prologue I have been serious about modifying my personal devices since 2017. Over the years I hadn’t found a guide that went over all the technical steps that I wanted, so I wrote my own guide." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-add-custom-hosts-file-to-android/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-08T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am A.H., a computer technology, smartphones, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated for documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Adding a Custom Hosts File to Android - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 8, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          7 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/android/">Android</a>
+              <a class="tag" href="/tags/mobile/">mobile</a>
+              <a class="tag" href="/tags/privacy/">privacy</a>
+              <a class="tag" href="/tags/adblock/">adblock</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#prologue">Prologue</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#0-pre-preparation">0. Pre-preparation</a></li>
+<li><a href="#0-1-download-the-necessary-files">0-1 Download the Necessary Files</a></li>
+<li><a href="#0-2-confirm-adb-and-android-device-drivers-installed-and-functioning">0-2 Confirm ADB and Android Device Drivers Installed and Functioning</a></li>
+<li><a href="#7-1-add-a-custom-hosts-file">7-1 Add a Custom Hosts File</a></li>
+<li><a href="#"></a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="prologue">Prologue</h2>
+<p>I have been serious about modifying my personal devices since 2017. Over the years I hadn’t found a guide that went over all the technical steps that I wanted, so I wrote my own guide. Tjat is the purpose of this guide; to serve as a resource for people that have similar interests in increasing their privacy and security by De-Goolging their personal device.</p>
+<p>Observations of de-googling this the Oneplus One. Installing (aka flashing) a de-Googleified ROM(aka operating system (OS)) and changing hosts file on the Oneplus One is a straight forward and headacheless process compared to doing this on current day smartphones and/or smartphones from certain manufacturers.
+Since the Oneplus One is a smartphone from 2014 and from a manufacturer that focused on end user customize-ability of the device, it does not have all the theft deterrence and device security features that Google and other smartphone manufacturers slowly began implementing into Android OS and smartphones begining in 2015. Changes to Android OS and smartphones made post 2016 that affect this guides steps mainly are the bootloader(device firmware), rootability(Android OS), verified boot(Android OS), security chip(device hardware, and disk partitions(device firmware and hardware).</p>
+<p>Lastly, if you have gained any value from using any of the FOSS projects mentioned in this guide, I recommend donating/supporting the developers behind of those projects. Posting on your social media, or even telling your friends, family, classmates, coworks, etc&hellip; helps spread awareness of these projects existance.</p>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p>The threat model that this guide is meant to protect against are; digital advertising, digital surveillance, data mining, and digital tracking on the device from advertisers, data miners, device manufacturer, internet service providers, and big tech companies.
+The Calyx Institute has done a study of the types of users of their private and secure version of Android OS, CalyxOS, <a href="https://calyxos.org/assets/docs/user-research/personas/calyxos-user-personas-2021.pdf">link to publication of their research(PDF)</a>. Referencing that study, I would say this guide is targeted towards the Pete and Anna personas.</p>
+<p>Installing and setting up a Oneplus One (device codename: bacon) should take somewhere from 1 hour, if you have already done this before and have already backed-up your data, 2 hours, if this is your first time but you have already backed-up your data, or 3 hours if this your first time and you need to back-up your data.</p>
+<p>Some apps require a background service to run properly, on Android this is usually done by Google Play Services, but since we are de-Googling the device we will use a FOSS alternative, MicroG.
+Most apps will work like normal without Google Play Services because MicroG will satisfy those apps requirements to run. <strong>Be advised</strong> that some apps will lose some compatibility or even not run because MicroG will not be able to satisfy all the requirements for those apps to run properly.
+For an indepth explanation of MicroG, how it works, and how it replaces Google Play Services refer to <a href="https://calyxos.org/docs/guide/microg/">CalyxOS&rsquo;s documentation explaining MicroG</a>.
+Google Maps/Waze, Google Pay, and banking apps are the tested apps that will <strong>not</strong> work on a De-Googled smartphone with or without MicroG.
+Audible, Gmail, Instagram, Uber, Youtube are some of the tested apps that <strong>will</strong> work on a De-Googled smartphone with MicroG. For a, community curated, list of apps compatiblity on MicroG, refer to <a href="https://plexus.techlore.tech/">Techlore&rsquo;s Project Plexus</a>.</p>
+<p>I plan on writing a article later that will explain why /e/OS is the chosen ROM and why the additional actions are taken after the ROM(aka operating system (OS)) is installed.</p>
+<p>This guide, whenever possible, references FOSS projects and services whose companies have privacy respecting policies in place.</p>
+<p> 
+ </p>
+<h2 id="0-pre-preparation">0. Pre-preparation</h2>
+<h3 id="0-1-download-the-necessary-files">0-1 Download the Necessary Files</h3>
+<ul>
+<li>In this section you will only be using the PC.</li>
+</ul>
+<p> 
+ </p>
+<h3 id="0-2-confirm-adb-and-android-device-drivers-installed-and-functioning">0-2 Confirm ADB and Android Device Drivers Installed and Functioning</h3>
+<ul>
+<li>On your PC, before being able to complete the steps in the sections below you must have: adb platform tools installed and the Android device (Android Bootloader Interface) driver installed.</li>
+<li>On your Android device, before being able to complete the steps in the sections below you must have: enabled USB debugging, allowed OEM unlocking, and granted ADB access to your PC.</li>
+</ul>
+<p>If you need to complete any of the above mentioned points in this section, refer to the <a href="/posts/guide-install-setup-abd-android-drivers-on-pc/"><strong>Install and Set Up ADB &amp; Android Drivers on PC - Guide</strong></a> guide to complete the missing point, and verify that both systems and all neccesary tools function correctly.</p>
+<p> 
+ </p>
+<h3 id="0-3-back-up-your-data-that-youhave-on-the-android-device">0-3 Back-up your data that youhave on the Android device</h3>
+<ul>
+<li>Back-up your data to a a external USB drive or Micro SD card for safe keeping, and to restore from when setting up the device.</li>
+</ul>
+<p>-Valuable data you should back-up includes: apps, app accounts/profiles, pictures, videos, texts, emails, online login info and passwords, 2FA backup files, etc&hellip;</p>
+<h3 id="0-4-screen-sleep-time-for-convience">0-4 Screen Sleep Time for Convience</h3>
+<p>On the device, for your convience, set the screen to not fall asleep, or to stay awake for a 15+ minutes.</p>
+<pre tabindex="0"><code>Settings &gt; Display &gt; Sleep &gt; 15 minutes
+</code></pre><p> 
+ </p>
+<h2 id="7-1-add-a-custom-hosts-file">7-1 Add a Custom Hosts File</h2>
+<ul>
+<li>This section will be using both the PC and the device.</li>
+<li>Confirm that you have completed the steps in the section above before proceeding, or else this section&rsquo;s steps will not work properly or cause you issues.</li>
+<li>When you are done configuring the device through adb on your PC, you should lock the bootloader to secure the device.</li>
+</ul>
+<ol>
+<li>On the device, In the &ldquo;Developer Options&rdquo; set &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo;. Note: If you do not set the device&rsquo;s &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo; the rest of these following steps will not work. On Android, root is a command that elevates all your commands to be able to use all commands and access all of the file system without restrictions.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; Root Access
+</code></pre><ol start="2">
+<li>Check that device is sercurely connected to the PC. On the PC in the command prompt or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>adb devices
+</code></pre><ol start="3">
+<li>
+<p>Confirm the device number matches the device number from when you have previously ran the <em>adb devices</em> command in previous sections.</p>
+</li>
+<li>
+<p>To download the hosts file from your phone onto your PC to edit it, on the PC in the command prompt or terminal type:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>adb pull /system/etc/hosts C:\Users\exampleuser\examplefolder\
+</code></pre><ol start="5">
+<li>
+<p>Now that the hosts file is on your PC, add your blocklists to it.</p>
+</li>
+<li>
+<p>Before you can upload your edited hosts file to the device you need to disable verity, Android&rsquo;s filesystem protection, on it. If you do not disable verity the rest of these following steps will not work.
+On the PC in the command prompt or terminal type the following commands in order:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>adb root
+adb disable-verity
+adb reboot
+</code></pre><ol start="7">
+<li>Check that the device is sercurely connected to the PC. On the PC in the command prompt or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>adb devices
+</code></pre><ol start="8">
+<li>
+<p>Confirm the device number matches the device number from when you have previously ran the <em>adb devices</em> command in previous sections.</p>
+</li>
+<li>
+<p>You must remount the device after it has rebooted for the PC to be able to write to it.
+On the PC in the command prompt or terminal type the following commands in order:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>adb root
+adb remount
+</code></pre><ol start="10">
+<li>Now you can upload your custom hosts file to the device. On the PC in the command prompt or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>adb push C:\Users\exampleuser\examplefolder\hosts /system/etc/
+</code></pre><ol start="11">
+<li>Re-enable verity, Android filesystem protection, for the devices security. On the PC in the command prompt or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>adb enable-verity
+adb reboot
+</code></pre><ol start="12">
+<li>On the device, In the &ldquo;Developer Options&rdquo; set &ldquo;Root Access&rdquo; to &ldquo;disabled&rdquo;.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; Root Access
+</code></pre><ol start="13">
+<li>Your custom hosts file has now been uploaded to the device, and your device is now more private and secure when using the internet.</li>
+</ol>
+<p> 
+ </p>
+<p><strong>Reference Articles for Adding a Custom Hosts File:</strong></p>
+<p><a href="https://www.howtogeek.com/140576/how-to-edit-the-hosts-file-on-android-and-block-web-sites/">How to Edit the Hosts File on Android - How to Geek</a></p>
+<p><a href="https://android.stackexchange.com/questions/162902/adb-push-not-working-on-system-read-only">adb push not working on /system, read only - Android Stack Exchange</a></p>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

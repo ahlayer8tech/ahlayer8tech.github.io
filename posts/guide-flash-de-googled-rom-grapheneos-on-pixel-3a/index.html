@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Flash De-Googled ROM GrapheneOS on a Pixel 3a - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flash De-Googled ROM GrapheneOS on a Pixel 3a - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Back-up your data from the Android device 1. Enable USB Debugging and Allow OEM Unlocking on the Android device 2. Install Android Device Driver - Windows Only - Manually 3. Install Android Platform Tools - Linux Only 4. Install GrapheneOS Image onto the Android device - Web Installer 5."/>
+
+    <meta property="og:title" content="Flash De-Googled ROM GrapheneOS on a Pixel 3a - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Back-up your data from the Android device 1. Enable USB Debugging and Allow OEM Unlocking on the Android device 2. Install Android Device Driver - Windows Only - Manually 3. Install Android Platform Tools - Linux Only 4. Install GrapheneOS Image onto the Android device - Web Installer 5." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-flash-de-googled-rom-grapheneos-on-pixel-3a/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-20T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am A.H., a computer technology, smartphones, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated for documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Flash De-Googled ROM GrapheneOS on a Pixel 3a - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 20, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          12 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/android/">Android</a>
+              <a class="tag" href="/tags/mobile/">mobile</a>
+              <a class="tag" href="/tags/privacy/">privacy</a>
+              <a class="tag" href="/tags/open-source/">open-source</a>
+              <a class="tag" href="/tags/debloated/">debloated</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#0-pre-preparation">0. Pre-preparation</a></li>
+<li><a href="#0-1-back-up-your-data-from-the-android-device">0-1 Back-up your data from the Android device</a></li>
+<li><a href="#1-enable-usb-debugging-and-allow-oem-unlocking-on-the-android-device">1. Enable USB Debugging and Allow OEM Unlocking on the Android device</a></li>
+<li><a href="#2-install-android-device-driver---windows-only---manually">2. Install Android Device Driver - Windows Only - Manually</a></li>
+<li><a href="#3-install-android-platform-tools---linux-only">3. Install Android Platform Tools - Linux Only</a></li>
+<li><a href="#4-install-grapheneos-image-onto-the-android-device---web-installer">4. Install GrapheneOS Image onto the Android device - Web Installer</a></li>
+<li><a href="#5-post-setup-actions">5. Post Setup Actions</a></li>
+<li><a href="#5-1-disallow-oem-unlocking-and-disable-developer-options-on-the-android-device">5-1 Disallow OEM Unlocking and Disable developer options on the Android device</a></li>
+<li><a href="#5-2-encrypt-the-device">5-2 Encrypt the Device</a></li>
+<li><a href="#5-3-change-to-a-privacy-respecting-dns">5-3 Change to a Privacy Respecting DNS</a></li>
+<li><a href="#5-4-download-your-apps">5-4 Download Your Apps</a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p> 
+ </p>
+<h2 id="0-pre-preparation">0. Pre-preparation</h2>
+<p><strong>Reference Documentation for Installing GrapheneOS:</strong></p>
+<p><a href="https://grapheneos.org/install/web">Web installer Guide - GrapheneOS Docs</a></p>
+<p><a href="https://grapheneos.org/install/cli">CLI install Guide - GrapheneOS Docs</a></p>
+<p><a href="https://youtu.be/ro5OsVk8OfE">How to install GrapheneOS on Pixel 6(&amp; all other Pixels) | DeGoogled Phone by Side of Burritos</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> 
+ </p>
+<h3 id="0-1-back-up-your-data-from-the-android-device">0-1 Back-up your data from the Android device</h3>
+<ul>
+<li>
+<p>Back-up your data to a a external USB drive or Micro SD card for safe keeping, and to restore from when setting up the device.</p>
+</li>
+<li>
+<p>Valuable data you should back-up includes: apps, app accounts/profiles, pictures, videos, texts, emails, online login info and passwords, 2FA backup files, etc&hellip;</p>
+</li>
+</ul>
+<p> 
+ </p>
+<p> 
+ </p>
+<h2 id="1-enable-usb-debugging-and-allow-oem-unlocking-on-the-android-device">1. Enable USB Debugging and Allow OEM Unlocking on the Android device</h2>
+<ul>
+<li>In this subsection you will only be using the device.</li>
+</ul>
+<ol>
+<li>
+<p>From the homesreen of the device go the &ldquo;Settings&rdquo; app.
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_1.png" alt="Enable USB Debug & Allow Unlock #1"></p>
+</li>
+<li>
+<p>In the &ldquo;Settings&rdquo; app go to the &ldquo;About Phone&rdquo; menu, located at the bottom in the &ldquo;Settings&rdquo; app.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_2.png" alt="Enable USB Debug & Allow Unlock #2"></p>
+<ol start="3">
+<li>In the &ldquo;About Phone&rdquo; menu go to the &ldquo;Build Number&rdquo;, located near the bottom of the menu, and tap on it 7 times to enable &ldquo;Developer options&rdquo;.
+Note: The device will have pop-up notification giving congratulation for enabling &ldquo;Developer options&rdquo;.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone &gt; Build Number + 7 taps
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.1.png" alt="Enable USB Debug & Allow Unlock #3.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.2.png" alt="Enable USB Debug & Unlock #3.2"></p>
+<ol start="4">
+<li>Go back to the &ldquo;Settings&rdquo; main menu, and go to the &ldquo;Developer options&rdquo; menu, located near the bottom of the &ldquo;Settings&rdquo; app.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.1.png" alt="Enable USB Debug & Allow Unlock #4.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.2.png" alt="Enable USB Debug & Allow Unlock #4.2"></p>
+<ol start="5">
+<li>In the &ldquo;Developer options&rdquo; menu go to <strong>enable</strong> OEM Unlock.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; OEM Unlock &quot;Enable&quot;
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_5.1.png" alt="Enable USB Debug & Allow Unlock #.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_5.2.png" alt="Enable USB Debug & Allow Unlock #.2"></p>
+<ol start="6">
+<li>In the &ldquo;Developer options&rdquo; menu go to <strong>enable</strong> Android debugging.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; Android debugging &quot;Enable&quot;
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_6.1.png" alt="Enable USB Debug & Allow Unlock #6.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_6.2.png" alt="Enable USB Debug & Allow Unlock #4.2"></p>
+<p> 
+ </p>
+<h2 id="2-install-android-device-driver---windows-only---manually">2. Install Android Device Driver - Windows Only - Manually</h2>
+<ul>
+<li>In this section you will be using the PC and the Android device.</li>
+<li>This section is <strong>only required for Windows PCs</strong>. The Linux Android device driver comes preinstalled on Linux systems(it is apart of/in the Linux kernel).</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol>
+<li>Power off/shutdown the Android device. To boot the Android device into the bootloader/fastboot/mode. While the phone is powered off, <em>press and hold</em> the <em>volume down button</em> and <em>power button</em> at the <em>same time</em>, and release the buttons when the phone vibrates and the screen loads into the bootloader/fastboot mode.</li>
+</ol>
+<pre tabindex="0"><code>volume down button long press + power button long press + at the same time = boot device into bootloader/fastboot mode
+</code></pre><ol start="2">
+<li>Connect the device to your PC via USB charging cable.</li>
+</ol>
+<ul>
+<li>Your PC will not recognize the device, and that is OK.</li>
+<li>The follwoing steps wil install the Android device driver that makes it so your PC will recognize the android device while it is in bootloader/fastboot mode.
+<img src="/Install_CalyxOS_on_Pixel_3a/driver_install_2.jpg" alt="Driver Install 2"></li>
+</ul>
+<ol start="3">
+<li>
+<p>Download the Andorid Device Driver files and unzip/extract the files from zip/compressed file. Google Android USB drivers @ <a href="https://developer.android.com/studio/run/win-usb">https://developer.android.com/studio/run/win-usb</a>
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_3.png" alt="Driver Install #3"></p>
+</li>
+<li>
+<p>On the PC, open Windows Start menu, type &ldquo;device manager&rdquo; and press enter.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Win-key &gt; type &quot;device manager&quot; + press enter = Device Manager menu
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/driver_install_4.png" alt="Driver Install #4"></p>
+<ol start="5">
+<li>
+<p>On the PC in Device Manager menu, locate and expand &ldquo;Portable Devices&rdquo; or &ldquo;Other Devices&rdquo;, depending on which is present, and then right-click the name of the device(will be named &ldquo;Android&rdquo; or something else generic(i.e. not your device&rsquo;s actual name)) you connected and select Update Driver Software. Device name is usually just &ldquo;Android&rdquo; when the Android device is in the bootloader and connected to the PC.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_5.1.png" alt="Driver Install #5.1">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_5.2.png" alt="Driver Install #5.2"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, select &ldquo;Browse my computer for drivers&rdquo; (2nd option listed).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_6.png" alt="Driver Install #6"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, select &ldquo;Let me pick from a list of available driver from my computer&rdquo; (2nd option listed).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_7.png" alt="Driver Install #7"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, verify that the &ldquo;Show all devices&rdquo; is highlight, and click Next(on the bottom right).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_8.png" alt="Driver Install #8"></p>
+</li>
+<li>
+<p>In the Driver Update wizard, click &ldquo;Have Disk&rdquo; button.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_9.png" alt="Driver Install #9"></p>
+</li>
+<li>
+<p>In the &ldquo;Install From Disk&rdquo; pop-up click &ldquo;Browse&rdquo;, Navigate to the folder where you extracted the Google USB driver, and select/hightlight the driver, filename is android_winusb.inf, and then click &ldquo;Open&rdquo; in the lower right corner. Then click &ldquo;OK&rdquo;(in upper right corner).
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.1.png" alt="Driver Install #10.1">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.2.png" alt="Driver Install #10.2">
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_10.3.png" alt="Driver Install #10.3"></p>
+</li>
+<li>
+<p>In the Driver Update wizard  select/highlight &ldquo;Android Bootloader Interface&rdquo; (2nd option in the list), and click &ldquo;Next&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_11.png" alt="Driver Install #11"></p>
+</li>
+<li>
+<p>A generic warning will pop-up mentioning compatability cannot be verified, but it can be ignored. Continue onto the installation process by clicking &ldquo;Yes&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_12.png" alt="Driver Install #12"></p>
+</li>
+<li>
+<p>Windows Security will display a pop-up asking if you want to install the driver/device software. Click &ldquo;Install&rdquo; to continue the installation process.(You may not get this warning depending on how Windows Security is configured on your PC.)</p>
+</li>
+<li>
+<p>When the install has completed, the Driver Update wizard will display a message stating the driver has been successfully updated. And its name will be changed from &ldquo;Android&rdquo; to &ldquo;Android Bootloader Interface&rdquo;.
+<img src="/Install_ADB_&amp;_Android_Driver/driver_install_14.png" alt="Driver Install #14"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<p><strong>Reference Articles for Installing Android Device Drivers:</strong></p>
+<p><a href="https://developer.android.com/studio/run/oem-usb">Install OEM USB drivers - Android Developers (Official)</a></p>
+<p><a href="https://www.xda-developers.com/download-android-usb-drivers/">Download Android USB Drivers for popular OEMs (w/Pictures) by XDA-Developers</a></p>
+<p><a href="https://www.droidwin.com/android-usb-drivers/">Download and Install Android USB Drivers (w/Pictures) by Droidwin</a></p>
+<p><a href="https://www.droidwin.com/fix-adb-device-not-found-error/#Fix_6_Manually_Install_Drivers">How to fix ADB Device not found - Fix 6: Manually Install Drivers by  Droidwin</a></p>
+<p> 
+ </p>
+<h2 id="3-install-android-platform-tools---linux-only">3. Install Android Platform Tools - Linux Only</h2>
+<ul>
+<li>In this section you will only be using the PC.</li>
+<li>This section is <strong>only required for Linux PCs</strong>.</li>
+<li>On Linux PCs USB devices cannot be used as non-root without udev rules being setup for each type of device. The Linux Android device driver comes preinstalled on Linux systems(it is apart of/in the Linux kernel).</li>
+<li>Do not use the adb files from the Ubuntu and Debian package repositories because they will be very outdated, and this may cause errors due to compatability issues with some newer versions of Android.</li>
+<li>As of publication of this guide the packages that will be downloaded are on version 28.0.2+6. Link to check the most recent version <a href="https://pkgs.org/download/android-sdk-platform-tools-common">https://pkgs.org/download/android-sdk-platform-tools-common</a></li>
+</ul>
+<ol>
+<li>Open a terminal and type:</li>
+</ol>
+<ul>
+<li>For Debian, Ubuntu, LinuxMint, &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo apt update
+sudo apt install android-sdk-platform-tools-common
+</code></pre><ul>
+<li>For Fedora &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo dnf install android-tools
+</code></pre><ul>
+<li>For Arch, Manjaro, &amp; derivatives:</li>
+</ul>
+<pre tabindex="0"><code>sudo pacman -Sy
+sudo pacman -S android-udev
+</code></pre><ul>
+<li>The proper tools and settings have been installed and configured after the install has completed.</li>
+</ul>
+<ol start="2">
+<li>Logout of your account, and then log back into your account. The udev rules should now have been initialized on the Linux PC.</li>
+</ol>
+<p><strong>Reference Articles for Linux ADB Tools as Non-root:</strong></p>
+<p><a href="https://grapheneos.org/install/web#flashing-as-non-root">Flashing as non-root - GrapheneOS Docs</a></p>
+<p> 
+ </p>
+<h2 id="4-install-grapheneos-image-onto-the-android-device---web-installer">4. Install GrapheneOS Image onto the Android device - Web Installer</h2>
+<ul>
+<li>In this section you will be using both the PC and the device.</li>
+<li>Firefox and Firefox-based browsers do not support the WebUSB protocol, so those browser will <strong>NOT</strong> work for the process of installing GrapheneOS onto the device.</li>
+<li>Confirm you have completed the steps in the preceeding sections, or else the proceeding sections commands will NOT function.</li>
+</ul>
+<ol>
+<li>Connect the device to your PC via USB charging cable, or if the cable is already connected verify it is securely inserted on both ends. If you have not already, power off/shutdown the Android device, and boot the Android device into the bootloader/fastboot mode.While the phone is powered off, <em>press and hold</em> the <em>volume down button</em> and <em>power button</em> at the <em>same time</em>, and release the buttons when the phone vibrates and the screen loads into the bootloader/fastboot mode.</li>
+</ol>
+<pre tabindex="0"><code>volume down button long press + power button long press + at the same time = boot device into bootloader/fastboot mode
+</code></pre><ol start="2">
+<li>On the PC, Open a chrome based browser and go to <a href="https://grapheneos.org/install/web">grapheneos.org/install/web</a>.</li>
+</ol>
+<ul>
+<li>This guide will be using <strong>Brave browser</strong> for the install process.</li>
+<li>Do <strong>NOT</strong> use Incognito or other private browsing modes on the web browser. There will not be enough space for the browser to save the factory image file.</li>
+<li>Firefox and Firefox-based browsers do not support the WebUSB protocol, so those browser will <strong>NOT</strong> work for these proceeding steps.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_2.png" alt="Install Image #2"></li>
+</ul>
+<ol start="3">
+<li>
+<p>On the PC, proceed to unlock the device bootloader by clicking the &ldquo;Unlock Bootloader&rdquo; button on the webpage.
+<a href="https://grapheneos.org/install/web#unlocking-the-bootloader">grapheneos.org/install/web#unlocking-the-bootloader</a>
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_3.png" alt="Install Image #3"></p>
+</li>
+<li>
+<p>On the PC, the web browser will display a prompt, in the upper left corner, asking you to slect and confirm the device you would like the web browser to connect to.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_4.1.png" alt="Install Image #4.1">
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_4.2.png" alt="Install Image #4.2">
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_4.3.png" alt="Install Image #4.3"></p>
+</li>
+<li>
+<p>On the device, select the option to unlock the bootloader. Press <em>volume down button</em> to select <em>UNLOCK THE BOOTLOADER</em> option, and then press the <em>power button</em> to confirm that option.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>volume down button press -&gt; UNLOCK THE BOOTLOADER + power button press = confirmation to allow unlocking of device bootloader
+</code></pre><ul>
+<li>It will take some moments for the bootloader to unlock.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_5.1.jpg" alt="Install Image #5.1">
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_5.2.jpg" alt="Install Image #5.2"></li>
+</ul>
+<ol start="6">
+<li>On the PC, proceed to download the image file by clicking the &ldquo;Download release&rdquo; button on the webpage.
+<a href="https://grapheneos.org/install/web#obtaining-factory-images">grapheneos.org/install/web#obtaining-factory-images</a></li>
+</ol>
+<ul>
+<li>The browser will automatically dectect the android device connnected to your PC and download the appropriate image file.</li>
+<li>The webpage will show the download progress under the &ldquo;Download release&rdquo;, and show the message &ldquo;Downloading exampledevicename-exampledate.zip release&rdquo;.</li>
+<li>It will take some time for the image file to download.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_6.1.png" alt="Install Image #6.1">
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_6.2.png" alt="Install Image #6.2"></li>
+</ul>
+<ol start="7">
+<li>
+<p>On the PC, the image file download will be completed when the  download status bar under the &ldquo;Download release&rdquo; button on the webpage says &ldquo;<strong>Downloaded</strong> exampledevicename-exampledate.zip release&rdquo;.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_7.png" alt="Install Image #7"></p>
+</li>
+<li>
+<p>On the PC, proceed to install the image file by clicking the &ldquo;Flash release&rdquo; button on the webpage.
+<a href="https://grapheneos.org/install/web#flashing-factory-images">grapheneos.org/install/web#flashing-factory-images</a></p>
+</li>
+</ol>
+<ul>
+<li>On the device, while the installation is happening, the device will reboot serveral times and the screen will flash and change to several different menus. <strong>DO NOT</strong> touch the phone during this time.</li>
+<li>On the PC in the browser, the image file is being installed on the device. <strong>DO NOT</strong> do anything to that command prompt, let it run. The image install will take awhile to install.</li>
+<li>The image install process will take awhile.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_8.1.png" alt="Install Image #8.1">
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_8.2.png" alt="Install Image #8.2"></li>
+</ul>
+<ol start="9">
+<li>
+<p>On the PC, the image file install will be completed when the  install status bar, under the &ldquo;Flash Release&rdquo; button, is repelaced with the message with &ldquo;<strong>Flashed</strong>exampledevicename-exampledate.zip to device&rdquo;.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_9.png" alt="Install Image #9"></p>
+</li>
+<li>
+<p>On the PC, proceed to unlock the device bootloader by clicking the &ldquo;Lock Bootloader&rdquo; button on the webpage.
+<a href="https://grapheneos.org/install/web#locking-the-bootloader">grapheneos.org/install/web#locking-the-bootloader</a>
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_10.1.png" alt="Install Image #10.1">
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_10.2.png" alt="Install Image #10.2"></p>
+</li>
+<li>
+<p>On the device, select the option to lock the bootloader. Press <em>volume down button</em> to select <em>LOCK THE BOOTLOADER</em> option, and then press the <em>power button</em> to confirm that option.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>volume down button press -&gt; LOCK THE BOOTLOADER + power button press = confirmation to allow locking of device bootloader
+</code></pre><ul>
+<li>It will take some moments for the bootloader to lock.
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_11.1.jpg" alt="Install Image #11.1">
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_11.2.jpg" alt="Install Image #11.2"></li>
+</ul>
+<ol start="12">
+<li>If no errors have popped-up during the the install process then that means GrapheneOS has been successfully completed. Press the power button with the default Start option selected in the bootloader menu to boot into the OS. Proceed to the next section.
+<a href="https://grapheneos.org/install/web#booting">grapheneos.org/install/web#booting</a>
+<img src="/Install_Graphene_OS_Pixel_3a/install_image_12.jpg" alt="Install Image #12"></li>
+</ol>
+<p> 
+ </p>
+<h2 id="5-post-setup-actions">5. Post Setup Actions</h2>
+<ul>
+<li>Taking these following actions significantly boosts your privacy and security when you use the Android device.</li>
+</ul>
+<p> 
+ </p>
+<h2 id="5-1-disallow-oem-unlocking-and-disable-developer-options-on-the-android-device">5-1 Disallow OEM Unlocking and Disable developer options on the Android device</h2>
+<ul>
+<li>In this subsection you will only be using the device.</li>
+<li><a href="https://grapheneos.org/install/web#disabling-oem-unlocking">grapheneos.org/install/web#disabling-oem-unlocking</a></li>
+</ul>
+<ol>
+<li>
+<p>From the homesreen of the device go the &ldquo;Settings&rdquo; app.
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_1.png" alt="Disllow Unlock & Disable Dev #1"></p>
+</li>
+<li>
+<p>In the &ldquo;Settings&rdquo; app go to the &ldquo;About Phone&rdquo; menu, located at the bottom in the &ldquo;Settings&rdquo; app.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_2.png" alt="Disllow Unlock & Disable Dev #2"></p>
+<ol start="3">
+<li>In the &ldquo;About Phone&rdquo; menu go to the &ldquo;Build Number&rdquo;, located near the bottom of the menu, and tap on it 7 times to enable &ldquo;Developer options&rdquo;.
+Note: The device will have pop-up notification giving congratulation for enabling &ldquo;Developer options&rdquo;.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; About Phone &gt; Build Number + 7 taps
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.1.png" alt="Disllow Unlock & Disable Dev #3.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_3.2.png" alt="Disllow Unlock & Disable Dev #3.2"></p>
+<ol start="4">
+<li>Go back to the &ldquo;Settings&rdquo; main menu, and go to the &ldquo;Developer options&rdquo; menu, located near the bottom of the &ldquo;Settings&rdquo; app.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options
+</code></pre><p><img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.1.png" alt="Disllow Unlock & Disable Dev #4.1">
+<img src="/Install_ADB_&amp;_Android_Driver/enable_usb_debug_allow_unlock_4.2.png" alt="Disllow Unlock & Disable Dev #4.2"></p>
+<ol start="5">
+<li>In the &ldquo;Developer options&rdquo; menu go to <strong>disable</strong> OEM Unlock.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; OEM Unlock &quot;disable&quot;
+</code></pre><p><img src="/Install_Graphene_OS_Pixel_3a/disllow-unlock_disable_dev_5.1.png" alt="Disllow Unlock & Disable Dev #5.1">
+<img src="/Install_Graphene_OS_Pixel_3a/disllow-unlock_disable_dev_5.2.png" alt="Disllow Unlock & Disable Dev #5.2"></p>
+<ol start="6">
+<li>In the &ldquo;Developer options&rdquo; menu go to the top of the menu and disable Developer Options&quot;.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; &quot;disable&quot;
+</code></pre><p><img src="/Install_Graphene_OS_Pixel_3a/disllow-unlock_disable_dev_6.png" alt="Disllow Unlock & Disable Dev #6"></p>
+<p> 
+ </p>
+<h2 id="5-2-encrypt-the-device">5-2 Encrypt the Device</h2>
+<ul>
+<li>
+<p>On newer versions of the CalyxOS image files the phone will encrypt itself on the initial setup of the device. If your device is already encrypted when you check encryption status, you do not need to proceed to this section.</p>
+</li>
+<li>
+<p>In this section you will only be using the device, and will need to plug it into the charger.</p>
+</li>
+<li>
+<p>If you have not already set a passcode for your device, one will be setup one in this section. <em>A encrypted device without a passcode is just silly.</em></p>
+</li>
+<li>
+<p>We will be doing a full-disk encryption as that is the most pravcy protecting encryption type for a device.</p>
+</li>
+<li>
+<p><strong>Warning:</strong> Disruptions during the encryption process may cause errors or raise issues. Disconnect and turn off the WiFi and set the device to airplane mode to avoid those issues.</p>
+</li>
+<li>
+<p><strong>Warning:</strong> If you are prone to loosing you device and do have have a consistent back-up policy it is not advised to do full-disk encryption on the device because Find-My-Device services will not work if the device is turned off.</p>
+</li>
+<li>
+<p><strong>Warning:</strong> Alarms - When the the device is turned off and has full disc encryption, Alarms will not work, because the Clock app will not be able to decrypt the Android Device.</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>Plugin your charging cable to the device and a power source. The device battery needs to be at or above 80% full before you begin.</p>
+</li>
+<li>
+<p>On the device, In the &ldquo;Developer Options&rdquo; set &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo;. Note: If you do not set the device&rsquo;s &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo; the rest of these following steps will not work.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Security &gt; Encryption &gt; Encrypt phone
+</code></pre><p> 
+ </p>
+<p><strong>Reference Articles for Encrypting Android Devices:</strong>
+<a href="https://source.android.com/security/encryption/">Encryption - Android Source</a></p>
+<p><a href="https://docs.microsoft.com/en-us/mem/intune/user-help/encrypt-your-device-android">Encrypting your Android device - Microsoft Docs</a></p>
+<p><a href="https://www.hexnode.com/blogs/everything-you-need-to-know-about-android-encryption/">Everything you need to know about Android encryption - Hexnode</a></p>
+<p> 
+ </p>
+<h2 id="5-3-change-to-a-privacy-respecting-dns">5-3 Change to a Privacy Respecting DNS</h2>
+<ul>
+<li>In this section you will only be using the device.
+-Adblocking is a crtical part of on device privacy because 1st and 3rd party internet and app trackers can collect alot of data about you, your habbits, who you associate with, and more.</li>
+</ul>
+<ol>
+<li>
+<p>Open the devices Settings.</p>
+</li>
+<li>
+<p>Navigate to Network &amp; Internet &gt; Advanced &gt; Private DNS.</p>
+</li>
+<li>
+<p>Select Private DNS provider hostname.</p>
+</li>
+<li>
+<p>In the textbox, type in your prefered DNS choice from the ones listed below, and click &ldquo;Save&rdquo;. (I recomend Mullvad, Adguard, or AhaDNS.)</p>
+</li>
+</ol>
+<p> 
+ </p>
+<p><strong>Reference Articles for Changing to a Privacy Respecting DNS:</strong></p>
+<!-- raw HTML omitted -->
+<p><a href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/">Setup DNS over HTTPS and DNS over TLS - Mullvad</a></p>
+<p><a href="https://adguard-dns.com/en/public-dns.html">Connecting to a public AdGuard DNS server - Adguard</a></p>
+<p><a href="https://github.com/AhaDNS/setup-guides/blob/master/Android/Android.md">AhaDNS Android setup guide - AhaDNS</a></p>
+<p><a href="https://support.quad9.net/hc/en-us/articles/360046736911-Configure-Android-to-use-Private-DNS-feature-with-Quad9">Configure Android to use Private DNS feature with Quad9 (9.9.9.9) - Quad9 Support</a></p>
+<p><a href="https://developers.cloudflare.com/1.1.1.1/setting-up-1.1.1.1/android">Setting Up Cloudflare (1.1.1.1) DNS on Android - Cloudflare Documentaion</a></p>
+<p> 
+ </p>
+<h2 id="5-4-download-your-apps">5-4 Download Your Apps</h2>
+<p>GrapheneOS is comes with a very minimal amount of apps. It is recomended to download and install F-Droid appstore (Free and opensource only apps), and if you want to download any non-FOSS apps, you will need to download Aurora Store (a private Google Play appstore frontend). Amazon Appstore is an option if you need another appstore. Alternatively, you can always download the specific individual app apk from <a href="https://www.apkmirror.com/">APK Mirror</a>, and install the app apk manually on to the device.</p>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

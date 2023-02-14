@@ -2,31 +2,103 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/android/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
+    <loc>/tags/airmon-ng/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/kali/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/pentest-wifi-airmon-ng-with-kali-linux-pt1/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/pentest/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/wifi/</loc>
+    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/flash/</loc>
+    <lastmod>2022-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/</loc>
+    <lastmod>2022-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/guide/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/open-source/</loc>
+    <lastmod>2022-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/pc/</loc>
+    <lastmod>2022-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/windows/</loc>
+    <lastmod>2022-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/guide-publish-create-github-pages-site/</loc>
+    <lastmod>2022-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/github/</loc>
+    <lastmod>2022-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/internet/</loc>
+    <lastmod>2022-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/web-development/</loc>
+    <lastmod>2022-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/website/</loc>
+    <lastmod>2022-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/android/</loc>
+    <lastmod>2022-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/app/</loc>
+    <lastmod>2022-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/debloated/</loc>
+    <lastmod>2022-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/mobile/</loc>
+    <lastmod>2022-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/privacy/</loc>
+    <lastmod>2022-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/guide-restore-whatsapp-chats-local-backup/</loc>
+    <lastmod>2022-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/guide-flash-de-googled-rom-grapheneos-on-pixel-3a/</loc>
+    <lastmod>2022-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/guide-flash-de-googled-rom-calyxos-on-pixel-3a/</loc>
+    <lastmod>2022-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/adblock/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/guide-add-custom-hosts-file-to-android/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/guide-flash-de-googled-rom-on-oneplus-one/</loc>
+    <lastmod>2021-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/mobile/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/pc/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/set-up/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/about/</loc>

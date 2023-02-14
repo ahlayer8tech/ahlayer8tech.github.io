@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Create &amp; Publish a Github Pages website - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Create &amp; Publish a Github Pages website - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation reading 1. Login onto GitHub 2. Creating a repository for the site 3. Creating the test site 4. Uploading your website files and folders   Introduction This guide intends to provide a step-by-step guide with pictures of how to publish a GitHub Pages website and create the corresponding repository for it."/>
+
+    <meta property="og:title" content="Create &amp; Publish a Github Pages website - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation reading 1. Login onto GitHub 2. Creating a repository for the site 3. Creating the test site 4. Uploading your website files and folders   Introduction This guide intends to provide a step-by-step guide with pictures of how to publish a GitHub Pages website and create the corresponding repository for it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-publish-create-github-pages-site/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-23T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am A.H., a computer technology, smartphones, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated for documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Create &amp; Publish a Github Pages website - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 23, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          6 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/github/">Github</a>
+              <a class="tag" href="/tags/web-development/">web-development</a>
+              <a class="tag" href="/tags/internet/">internet</a>
+              <a class="tag" href="/tags/website/">website</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#0-pre-preparation-reading">0. Pre-preparation reading</a></li>
+<li><a href="#1-login-onto-github">1. Login onto GitHub</a></li>
+<li><a href="#2-creating-a-repository-for-the-site">2. Creating a repository for the site</a></li>
+<li><a href="#3-creating-the-test-site">3. Creating the test site</a></li>
+<li><a href="#4-uploading-your-website-files-and-folders">4. Uploading your website files and folders</a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p>This guide intends to provide a step-by-step guide with pictures of how to publish a GitHub Pages website and create the corresponding repository for it. Some familitarity of Github and the markdown syntax language is advised before following this guide.</p>
+<p>Github Pages uses the JAMstack web architecture to host websites. GitHub Pages only works with a static website generators, such as Jekyll, Gatsby, Hugo, Next.js, Eleventy, etc&hellip; This guide does NOT go over Githubs built-in Jekyl static website builder, because I do find their themes intresting for the category of technology blogs, and nor configuring custom urls for GitHub Pages. Familiarity with the JAMstack and static website generators is highly recoemend before proceeding with the steps of this guide.</p>
+<p> 
+ </p>
+<h2 id="0-pre-preparation-reading">0. Pre-preparation Reading</h2>
+<p><strong>Reference docs for creating and publishing a Github Pages site:</strong></p>
+<p><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">Creating a GitHub Pages site - Github Docs</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites">About GitHub Pages - Github Docs</a></p>
+<p><a href="https://docs.github.com/en/get-started/quickstart/create-a-repo">Create a repository - Github Docs</a></p>
+<p><a href="https://www.cloudflare.com/learning/performance/what-is-jamstack/">What is JAMstack? - Cloudflare</a></p>
+<p><a href="https://www.cloudflare.com/learning/performance/static-site-generator/">What is a static site generator? - Cloudflare</a></p>
+<p><a href="https://jamstack.wtf/">Jamstack WTF - Jamsack.wtf</a></p>
+<p><a href="https://jamstack.org/generators/">A List of Static Site Generators for Jamstack Sites - Jamstack.org</a></p>
+<p>If you use the Hugo Static Website Generator:</p>
+<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on GitHub - Hugo</a></p>
+<p><a href="https://scribe.rip/featurepreneur/creating-a-website-using-hugo-and-github-pages-d30dc33d8f8a">Creating a website using Hugo and GitHub Pages - Praveena S</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> 
+ </p>
+<h2 id="1-login-onto-github">1. Login onto GitHub</h2>
+<ol>
+<li>
+<p>Go to github.com/login
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/login_github_1.png" alt="github login"></p>
+</li>
+<li>
+<p>Input your credntials to sign
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/login_github_2.png" alt="github login"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="2-creating-a-repository-for-the-site">2. Creating a repository for the site</h2>
+<ol>
+<li>
+<p>In the top-right corner of the page click the ➕⬇️ to show the drop-down menu.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_1.png" alt="create repo"></p>
+</li>
+<li>
+<p>In that drop-down menu click &ldquo;New repository&rdquo;, at the top of that drop down menu.</p>
+</li>
+</ol>
+<ul>
+<li>You will be taken to the &ldquo;Create a repository page&rdquo;
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_2.png" alt="create repo"></li>
+</ul>
+<ol start="3">
+<li>
+<p>In the &ldquo;Owner&rdquo; field, verify the new repository will be created under you or your organizations ownership, click the drop-down menu and click the username that you want.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_3.png" alt="create repo"></p>
+</li>
+<li>
+<p>In the &ldquo;Repository name&rdquo; field, next to te owner field, enter yourusernamehere.github.io or yourorganizationsnamehere.github.io.</p>
+</li>
+</ol>
+<ul>
+<li>If your user or organization name contains uppercase letters, you must use lowercase the letters.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_4.png" alt="create repo"></li>
+</ul>
+<ol start="5">
+<li>
+<p>Enter a brief and precise description for your or your organizations for clarity purposes.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_5.png" alt="create repo"></p>
+</li>
+<li>
+<p>Choose a repository visibility for the repository.</p>
+</li>
+</ol>
+<ul>
+<li>Repository must be &ldquo;Public&rdquo; for you to be able to make a GitHub Pages site.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_6.png" alt="create repo"></li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol start="7">
+<li>
+<p>Select/checkmark &ldquo;Add a README file&rdquo; option in the &ldquo;Initialize this repository with:&rdquo; section.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_7.png" alt="create repo"></p>
+</li>
+<li>
+<p>Scroll to the bottom of the page, and click &ldquo;Create repository&rdquo;, and wait for GitHub to create the repository.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_8.1.png" alt="create repo"></p>
+</li>
+<li>
+<p>When the repository has finished being created, Github will take you to the repository&rsquo;s main page.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_repo_9.png" alt="create repo"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="3-creating-the-test-site">3. Creating the test site</h2>
+<ul>
+<li>You can only create one user or organization site for each account on GitHub. Project sites, whether owned by an organization or a personal account, are unlimited.</li>
+<li>There are three types of GitHub Pages sites: project, user, and organization. User and organization sites are connected to a specific account on GitHub.com. Project sites are connected to a specific project hosted on GitHub, example a JavaScript library, a recipe collection, etc&hellip;</li>
+</ul>
+<ol>
+<li>
+<p>Once at the main page of the site repository (&ldquo;Code&rdquo; tab), click on the &ldquo;Add file&rdquo; drop-down menu, next to the green &ldquo;Code&rdquo; box drop-down menu.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_1.png" alt="create site"></p>
+</li>
+<li>
+<p>In that drop-down menu click &ldquo;Create new file&rdquo;, at the top of that drop down menu.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_2.png" alt="create site"></p>
+</li>
+<li>
+<p>Name the file &ldquo;index.md&rdquo;, and then write brief yet precise description for clarity.
+-Verify that the file will be created/commited in the &ldquo;main&rdquo; branch.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_3.1.png" alt="create site">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_3.2.png" alt="create site"></p>
+</li>
+<li>
+<p>Scroll to the bottom of the page, and click the green button that says &ldquo;Commint new file&rdquo;, and wait for GitHub to create the repository.</p>
+</li>
+</ol>
+<ul>
+<li>Best practice is to give a title and description of changes when adding or changing files on Github.</li>
+<li>Verify that the files are being commited directly to the &ldquo;main&rdquo; branch.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_4.1.png" alt="create site">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_4.2.png" alt="create site"></li>
+</ul>
+<ol start="5">
+<li>
+<p>When the GitHub has finished and reloaded back into the main page for the site repository (&ldquo;Code&rdquo; tab), click on the &ldquo;Settings&rdquo; tab, at the top left.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_5.png" alt="create site"></p>
+</li>
+<li>
+<p>In the &ldquo;Code and automation&rdquo; section of the sidebar in the repository settings menu, click &ldquo;Pages&rdquo;.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_6.png" alt="create site"></p>
+</li>
+<li>
+<p>In the &ldquo;GitHub Pages&rdquo; menu page in the source section click on the &ldquo;None⬇️&rdquo; field.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_7.png" alt="create site"></p>
+</li>
+<li>
+<p>In that drop-down menu click &ldquo;main&rdquo;, at the top of that drop down menu.</p>
+</li>
+</ol>
+<ul>
+<li>You are changing the default source branch from &ldquo;None&rdquo;
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_8.1.png" alt="create site">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_8.2.png" alt="create site"></li>
+</ul>
+<ol start="9">
+<li>
+<p>In the &ldquo;GitHub Pages&rdquo; menu page in the source section click the Save button, on the far left.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_9.png" alt="create site"></p>
+</li>
+<li>
+<p>Visit your GitHub Pages website to verify the initial test index.md file displays.</p>
+</li>
+</ol>
+<ul>
+<li>It can take up to 10 minutes for changes to your site to publish after you save/push the changes to GitHub.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_10.png" alt="create site"></li>
+</ul>
+<ol start="11">
+<li>You can check your deployment of the GitHub Pages website from the main page of the repository(&ldquo;Code&rdquo; Tab) at the lower left hand corner of Github.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_11.1.png" alt="create site">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/create_site_11.2.png" alt="create site"></li>
+</ol>
+<p> 
+ </p>
+<h3 id="congratulations--on-creating-the-foundations-for-your-own-custom-website-that-will-use-github-pages-it-is-now-time-upload-your-website-files">Congratulations, ⭐, on creating the foundations for your own custom website that will use GitHub Pages. It is now time upload your website files.</h3>
+<p> 
+ </p>
+<h2 id="4-uploading-your-website-files-and-folders">4. Uploading your website files and folders</h2>
+<ol>
+<li>
+<p>At the main page of the site repository (&ldquo;Code&rdquo; tab), click on the &ldquo;Add file&rdquo; drop-down menu, next to the green &ldquo;Code&rdquo; box drop-down menu.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_1.png" alt="upload content"></p>
+</li>
+<li>
+<p>In that drop-down menu click &ldquo;upload files&rdquo;, at the top of that drop down menu.</p>
+</li>
+</ol>
+<ul>
+<li>You will be taken to the &ldquo;Upload&rdquo; page for the site repository.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_2.png" alt="upload content"></li>
+</ul>
+<ol start="3">
+<li>
+<p>Once at the upload page for the site repository, click and drag all your website files from the folder on your PC to the box that says &ldquo;Drag files to add them to your repository&rdquo; (it is bolded text). 
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_3.3.png" alt="upload content">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_3.4.png" alt="upload content"></p>
+</li>
+<li>
+<p>After you have clicked and dragged all your files to the folder, you have to wait for all those files to upload to GitHub.</p>
+</li>
+</ol>
+<ul>
+<li>A green progress bar will display under the &ldquo;Drag files to add them to your repository&rdquo; box will show the prgress of the files uploading. The &ldquo;Uploading X of X files&rdquo; text under the green progress bar will show the count of the files that have sucessfully uploaded to Github. 
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_4.1.png" alt="upload content">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_4.2.png" alt="upload content"></li>
+</ul>
+<ol start="5">
+<li>When all the website files have finished uploading. Scroll to the bottom of the page, and click the green button that says &ldquo;Commit changes&rdquo;, and wait for GitHub to create the repository. Now wait for GitHub to finish processing the commit.</li>
+</ol>
+<ul>
+<li>Best practice is to give a title and description of changes when adding or changing files on Github.</li>
+<li>Verify that the files are being commited directly to the &ldquo;main&rdquo; branch.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_5.1.png" alt="upload content">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_5.2.png" alt="upload content">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_5.3.png" alt="upload content"></li>
+</ul>
+<ol start="6">
+<li>
+<p>Verify that all your website files and folders you have uploaded to the site repository.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_6.png" alt="upload content"></p>
+</li>
+<li>
+<p>You can check your deployment of the GitHub Pages website from the main page of the repository(&ldquo;Code&rdquo; Tab) at the lower left hand corner of Github.
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_7.1.png" alt="upload content">
+<img src="/Create_&amp;_Publish_Github_Pages_site_&amp;_Repo/upload_files_&amp;_folders_7.2.png" alt="upload content"></p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> 
+ </p>
+<h3 id="congratulations--on-publishing-your-own-custom-website-using-github-pages-it-is-now-time-share-your-cool-new-website-with-those-you-want-to-share-it-with">Congratulations, ⭐, on publishing your own custom website using GitHub Pages. It is now time share your cool new website with those you want to share it with.</h3>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

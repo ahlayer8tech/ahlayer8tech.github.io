@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Flash De-Goolged Android ROM on a Oneplus One - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flash De-Goolged Android ROM on a Oneplus One - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Prologue Introduction 0. Pre-preparation 0-1 Download the Necessary Files 0-2 Confirm ADB and Android Device Drivers Installed and Functioning 0-3 Back-up your data from the Android device 0-4 Screen Sleep Time for Convience 1. Check Device Lock Status 2. Unlock the Bootloader 3. Install a Custom Recovery 4."/>
+
+    <meta property="og:title" content="Flash De-Goolged Android ROM on a Oneplus One - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Prologue Introduction 0. Pre-preparation 0-1 Download the Necessary Files 0-2 Confirm ADB and Android Device Drivers Installed and Functioning 0-3 Back-up your data from the Android device 0-4 Screen Sleep Time for Convience 1. Check Device Lock Status 2. Unlock the Bootloader 3. Install a Custom Recovery 4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-flash-de-googled-rom-on-oneplus-one/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-10T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am A.H., a computer technology, smartphones, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated for documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Flash De-Goolged Android ROM on a Oneplus One - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 10, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          17 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/android/">Android</a>
+              <a class="tag" href="/tags/mobile/">mobile</a>
+              <a class="tag" href="/tags/privacy/">privacy</a>
+              <a class="tag" href="/tags/open-source/">open-source</a>
+              <a class="tag" href="/tags/debloated/">debloated</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#prologue">Prologue</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#0-pre-preparation">0. Pre-preparation</a></li>
+<li><a href="#0-1-download-the-necessary-files">0-1 Download the Necessary Files</a></li>
+<li><a href="#0-2-confirm-adb-and-android-device-drivers-installed-and-functioning">0-2 Confirm ADB and Android Device Drivers Installed and Functioning</a></li>
+<li><a href="#0-3-back-up-your-data-from-the-android-device">0-3 Back-up your data from the Android device</a></li>
+<li><a href="#0-4-screen-sleep-time-for-convience">0-4 Screen Sleep Time for Convience</a></li>
+<li><a href="#1-check-device-lock-status">1. Check Device Lock Status</a></li>
+<li><a href="#2-unlock-the-bootloader">2. Unlock the Bootloader</a></li>
+<li><a href="#3-install-a-custom-recovery">3. Install a Custom Recovery</a></li>
+<li><a href="#4-delete-the-current-installed-rom">4. Delete the Current Installed ROM</a></li>
+<li><a href="#5-install-the-new-rom">5. Install the New ROM</a></li>
+<li><a href="#8-relock-the-bootloader">6. Relock the Bootloader</a></li>
+<li><a href="#7-post-setup-actions">7. Post Setup Actions</a></li>
+<li><a href="#7-1-encrypt-the-device">7-1 Encrypt the Device</a></li>
+<li><a href="#7-2-change-to-a-privacy-respecting-dns">7-2 Change to a Privacy Respecting DNS</a></li>
+<li><a href="#7-3-download-your-apps">7-3 Download Your Apps</a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="prologue">Prologue</h2>
+<p>I have been serious about modifying my personal devices since 2017. Over the years I hadn’t found a guide that went over all the technical steps that I wanted, so I wrote my own guide. That is the purpose of this guide; to serve as a resource for people that have similar interests in increasing their privacy and security by De-Goolging their personal device.</p>
+<p>The threat model that this guide is meant to protect against are; digital advertising, digital surveillance, data mining, and digital tracking on the device from advertisers, data miners, device manufacturer, internet service providers, and big tech companies.
+The Calyx Institute has done a study of the types of users of their private and secure version of Android OS, CalyxOS, <a href="https://calyxos.org/assets/docs/user-research/personas/calyxos-user-personas-2021.pdf">link to publication of their research(PDF)</a>. Referencing that study, I would say this guide is targeted towards the Pete and Anna personas.</p>
+<p>Observations of de-googling the Oneplus One. Installing (aka flashing) a de-Googleified ROM(aka operating system (OS)) is a straight forward and headacheless process compared to doing this on current day smartphones and/or smartphones from certain manufacturers.
+Since the Oneplus One is a smartphone from 2014 and from a manufacturer that focused on end user customize-ability of the device, it does not have all the theft deterrence and device security features that Google and other smartphone manufacturers slowly began implementing into Android OS and smartphones begining in 2015. Changes to Android OS and smartphones made post 2016 that affect this guides steps mainly are the bootloader(device firmware), rootability(Android OS), verified boot(Android OS), security chip(device hardware, and disk partitions(device firmware and hardware).</p>
+<p>Lastly, if you have gained any value from using any of the FOSS projects mentioned in this guide, I recommend donating/supporting the developers behind of those projects. Posting on your social media, or even telling your friends, family, classmates, coworks, etc&hellip; helps spread awareness of these projects existance.</p>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p>This guide will go over the process of installing and setting up de-Googled ROMs(aka OSs) like DivestOS, /e/OS, and LineageOS with MicroG through using ADB-platfrom-tools from your PC, unlocking the bootloader of the Android device, and by installing TWRP recovery on your Andrid device.</p>
+<p>Installing and setting up a Oneplus One (device codename: bacon) should take somewhere from 1 hour, if you have already done this before and have already backed-up your data, 2 hours, if this is your first time but you have already backed-up your data, or 3 hours if this your first time and you need to back-up your data.</p>
+<p>Some apps require a background service to run properly, on Android this is usually done by Google Play Services, but since we are de-Googling the device we will use a FOSS alternative, MicroG. Most apps will work like normal without Google Play Services because MicroG will satisfy those apps requirements to run. <strong>Be advised</strong> that some apps will lose some compatibility or even not run because MicroG will not be able to satisfy all the requirements for those apps to run properly.</p>
+<ul>
+<li>
+<p>Google Maps, Waze, Google Pay, and banking apps are some of the tested apps that will <strong>not</strong> work on a De-Googled smartphone with (or without) MicroG.</p>
+</li>
+<li>
+<p>Audible, Gmail, Instagram, Uber, Youtube are some of the tested apps that <strong>will</strong> work on a De-Googled smartphone with MicroG. For a, community curated, list of apps compatiblity with MicroG, refer to <a href="https://plexus.techlore.tech/">Techlore&rsquo;s Project Plexus</a>.</p>
+</li>
+</ul>
+<p>For an indepth explanation of MicroG, how it works, and how it replaces Google Play Services refer to <a href="https://calyxos.org/docs/guide/microg/">CalyxOS&rsquo;s documentation explaining MicroG</a>.</p>
+<!-- raw HTML omitted -->
+<p>This guide, whenever possible, references FOSS projects and services whose companies have privacy respecting policies in place.</p>
+<p> 
+ </p>
+<h2 id="0-pre-preparation">0. Pre-preparation</h2>
+<p> 
+ </p>
+<h3 id="0-1-download-the-necessary-files">0-1 Download the Necessary Files</h3>
+<ul>
+<li>In this section you will only be using the PC.</li>
+</ul>
+<p>Recovery Image:</p>
+<p><a href="https://dl.twrp.me/bacon/">TWRP Custom Recovery Image for the Oneplus One (codename: bacon)</a></p>
+<p>Operating Systems - ROM zip files:</p>
+<p><a href="https://images.ecloud.global/dev/bacon/">/e/OS ROM files for Oneplus One (codename: bacon) - my preferred OS for this Device</a></p>
+<p><a href="https://divestos.org/index.php?page=devices&amp;base=LineageOS#device-bacon">DivestOS for Oneplus One (codename: bacon)</a></p>
+<p><a href="https://download.lineage.microg.org/bacon/">LineageOS with MicroG for Oneplus One (codename: bacon)</a></p>
+<p> 
+ </p>
+<h3 id="0-2-confirm-adb-and-android-device-drivers-installed-and-functioning">0-2 Confirm ADB and Android Device Drivers Installed and Functioning</h3>
+<ul>
+<li>On your PC, before being able to complete the steps in the sections below you must have: adb platform tools installed and the Android device (Android Bootloader Interface) driver installed.</li>
+<li>On your Android device, before being able to complete the steps in the sections below you must have: enabled USB debugging, allowed OEM unlocking, and allowed USB debug of the device by your PC.</li>
+</ul>
+<p>If you need to complete any of the above mentioned points in this section, refer to the <a href="/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/"><strong>Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide</strong></a> guide to complete the missing point, and verify that both systems and all neccesary tools function correctly.</p>
+<p> 
+ </p>
+<h3 id="0-3-back-up-your-data-from-the-android-device">0-3 Back-up your data from the Android device</h3>
+<ul>
+<li>Back-up your data to a a external USB drive or Micro SD card for safe keeping, and to restore from when setting up the device.</li>
+</ul>
+<p>-Valuable data you should back-up includes: apps, app accounts/profiles, pictures, videos, texts, emails, online login info and passwords, 2FA backup files, etc&hellip;</p>
+<h3 id="0-4-screen-sleep-time-for-convience">0-4 Screen Sleep Time for Convience</h3>
+<p>On the device, for your convience, set the screen to not fall asleep, or to stay awake for a 15+ minutes.</p>
+<pre tabindex="0"><code>Settings &gt; Display &gt; Sleep &gt; 15 minutes
+</code></pre><p> 
+ </p>
+<h2 id="1-check-device-lock-status">1. Check Device Lock Status</h2>
+<ul>
+<li>In this section you will be using both the PC and the device.</li>
+</ul>
+<ol>
+<li>
+<p>Connect the device to your PC via USB charging cable.</p>
+</li>
+<li>
+<p>With the device turned on and on the home screen, in the PC open a command prompt(with adb) or terminal and type:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>adb devices
+</code></pre><ol start="3">
+<li>
+<p>Save/write down the device number that is shown in the command prompt or terminal after running <em>adb devices</em> for later reference.</p>
+</li>
+<li>
+<p>In command prompt(with adb) or terminal type and press enter:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>adb reboot bootloader
+</code></pre><ol start="5">
+<li>When the device has finished loading into the bootloader, verify the device is still connected to the PC, and that the PC dectects it. <strong>Android Device screen may appear off or very dim while in the bootloader</strong>, but it depends on the device manafacturer. In the command prompt(with adb) or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>fastboot devices
+</code></pre><ol start="6">
+<li>
+<p>Check that the device number from <em>fastboot devices</em> matches the the device number from the earlier <em>adb devices</em> command. If it matches continue to the next step, and if it does not match, troubleshoot; check the cable connection on both ends, change USB ports on the PC, replace the charging cable, and/or carefully repeat the preceeding steps.</p>
+</li>
+<li>
+<p>Check the device lock status by typing in the command prompt or terminal:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>fastboot oem device-info
+</code></pre><ol start="8">
+<li>If the bootloader is locked proceed to the next section. If the bootloader is <strong>Un</strong>locked skip the next section and proceed to section #.</li>
+</ol>
+<p> 
+ </p>
+<h2 id="2-unlock-the-bootloader">2. Unlock the Bootloader</h2>
+<ul>
+<li>In this section you will only be using the PC, but leave the Android device plugged into the PC.</li>
+<li><strong>Warning: This section will erase all your data! Backup your data if you haven&rsquo;t already!</strong></li>
+</ul>
+<ol>
+<li>To unlock the bootloader in the command prompt or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>fastboot oem unlock
+</code></pre><p><strong>Warning: Unlocking the bootloader will erase all your data from your device!</strong></p>
+<p>AndroidOS erasing the device can take several minutes, and the device should restart automatically when it is done, but if it does not automatically restart in the command prompt or terminal type:</p>
+<pre tabindex="0"><code>fastboot reboot
+</code></pre><ol start="2">
+<li>
+<p>Bootloader has now been unlocked, and the device has been factory reset.</p>
+</li>
+<li>
+<p>On the Android device you <strong>NEED</strong> to re-enabled USB debugging, re-allow OEM unlocking, and re-allow USB debugging of the device by the PC for any of the proceeding steps to work and run on your device.</p>
+<p>If you need a guide to help you redo those point, follow:</p>
+<ul>
+<li><a href="/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/#2-1-enable-usb-debugging-and-allow-oem-unlocking-on-the-android-device"><strong>2-1 Enable USB Debugging and Allow OEM Unlock on the Android device</strong></a></li>
+<li><a href="/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/#2-2-allow-usb-debugging-of-the-device-by-the-pc"><strong>2-2 Allow USB debugging of the device by the PC</strong></a></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>You will have to go through the Android Device setup prcoess before you can access those settings mentioned above. Avoid signing into Google because it is not required and will waste time syncing your accounts on your device, and all the data will be erased when the bootloader is relocked.</li>
+</ul>
+<p> 
+ </p>
+<p><strong>Reference Articles for Unlocking the Bootloader:</strong></p>
+<p><a href="https://doc.e.foundation/devices/bacon/install">Unlocking the Bootloader - e Foundation documention</a></p>
+<p><a href="https://wiki.lineageos.org/devices/bacon/install#unlocking-the-bootloader">Unlocking the Bootloader - LineageOS Wiki</a></p>
+<p> 
+ </p>
+<h2 id="3-install-a-custom-recovery">3. Install a Custom Recovery</h2>
+<ul>
+<li>In this section you will only be using the PC, but leave the Android device plugged into the PC.</li>
+<li>Confirm that you have completed the steps in the section above before proceeding, or else this section&rsquo;s steps will not work properly or cause you issues.</li>
+</ul>
+<ol>
+<li>With the device turned on and on the home screen and connected to the PC, on the PC in a command prompt(with ADB) or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>adb devices
+</code></pre><ol start="2">
+<li>
+<p>Save/write down the device number that is shown in the command prompt or terminal after running <em>adb devices</em> for later reference.</p>
+</li>
+<li>
+<p>In command prompt(with adb) or terminal type and press enter:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>adb reboot bootloader
+</code></pre><ol start="4">
+<li>When the device has finished loading into the bootloader, verify the device is still connected to the PC, and that the PC dectects it. <strong>Android Device screen may appear off or very dim while in the bootloader</strong>, but it depends on the device manafacturer. In the command prompt(with adb) or terminal type and press enter:</li>
+</ol>
+<pre tabindex="0"><code>fastboot devices
+</code></pre><ol start="5">
+<li>
+<p>Check that the device number from <em>fastboot devices</em> matches the the device number from the earlier <em>adb devices</em> command. If it matches continue to the next step, and if it does not match, troubleshoot; check the cable connection on both ends, change USB ports on the PC, replace the charging cable, and/or carefully repeat the preceeding steps.</p>
+</li>
+<li>
+<p>To flash a recovery image onto the device in the command prompt or terminal type:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>fastboot flash recovery C:\Users\exampleuser\examplefolder\twrp-x.x.x-x-devicecodename.img
+</code></pre><ol start="7">
+<li>When the flashing completes, reboot into the device&rsquo;s recovery to verify the installation. In the command prompt(with ADB) or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>fastboot reboot recovery
+</code></pre><ol start="8">
+<li>If the Android Device reboots into the newly installed custom recovery then it has been installed successfully.</li>
+</ol>
+<p>9, If the device is stuck in a bootloop, or only reboots into the bootloader, re-attempt steps 6 and 7 (from this section).</p>
+<ul>
+<li>Power of the device by holding down the power button untill the device shuts down (screen turns off).</li>
+<li>Reboot into the bootloader manually by long pressing the <em>Volume Down</em> and <em>Power</em>  buttons at the same time.</li>
+</ul>
+<pre tabindex="0"><code>Volume Down button long press + Power button long press + both @ sametime = boot into bootloader menu if the device was off
+</code></pre><p> 
+ </p>
+<p><strong>Reference Articles for Installing a Custom Recovery:</strong></p>
+<p><a href="https://doc.e.foundation/devices/bacon/install">Booting a Custom Recovery using Fastboot- e Foundation documention</a></p>
+<p><a href="https://wiki.lineageos.org/devices/bacon/install#installing-a-custom-recovery-using-fastboot">Installing a Custom Recovery Using Fastboot - LineageOS Wiki</a></p>
+<p> 
+ </p>
+<h2 id="4-delete-the-current-installed-rom">4. Delete the Current Installed ROM</h2>
+<ul>
+<li>In this section you will only be using the device, but leave the Android device plugged into the PC.</li>
+<li>Confirm that you have completed the steps in the section above before proceeding, or else this section&rsquo;s steps will not work properly or cause you issues.</li>
+<li>Before installing(aka flashing) the new OS (aka ROM) you must delete(aka wipe) the current installed OS and the device data (this is different than erasing the data that happened during the bootloader unlocking).</li>
+<li><strong>Warning: This section will erase all your data and the current installed OS from the device! Backup your data if you haven&rsquo;t already!</strong></li>
+</ul>
+<ol>
+<li>On the device, from the TWRP recovery main menu tap &ldquo;Wipe&rdquo; button in the top right corner of the screen. When in the &ldquo;Wipe&rdquo; menu tap &ldquo;Format Data&rdquo; in the bottom right corner. In the &ldquo;Format data&rdquo; menu type &ldquo;yes&rdquo; on the device scree to begin the data wipe.</li>
+</ol>
+<pre tabindex="0"><code>Main Menu &gt; Wipe &gt; Format Data
+</code></pre><ol start="2">
+<li>
+<p>When the data formatting is done, go back to the &ldquo;Wipe&rdquo; menu.</p>
+</li>
+<li>
+<p>When in the &ldquo;Wipe&rdquo; menu click &ldquo;Advanced Wipe&rdquo; in the bottom left corner.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Wipe &gt; Advanced Wipe
+</code></pre><ol start="4">
+<li>In the &ldquo;Advanced Wipe&rdquo; menu select &ldquo;System&rdquo; and &ldquo;Cache&rdquo;, and then swipe right on the &ldquo;Swipe to Wipe&rdquo; button at the bottom of the screen (has three arrows pointing right) for the device to delete the ROM (aka OS) that is currently installed.</li>
+</ol>
+<pre tabindex="0"><code>☑️ System
+☑️ Cache
+_______________________________________
+|-------|                             |
+| &gt; &gt; &gt; |        Swipe to Wipe        |
+|-------|                             |
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+</code></pre><ol start="5">
+<li>The device is now has no ROM (aka OS) installed or data on it, proceed to the next step. <strong>DO NOT REBOOT</strong> the Android device.</li>
+</ol>
+<p><strong>Reference Articles for Deleteing the Current Installed ROM(aka OS):</strong></p>
+<p><a href="https://doc.e.foundation/devices/bacon/install">Installing /e/OS from Recovery - e Foundation documention</a></p>
+<p><a href="https://wiki.lineageos.org/devices/bacon/install#installing-lineageos-from-recovery">Installing LineageOS from Recovery - LineageOS Wiki</a></p>
+<p> 
+ </p>
+<h2 id="5-install-the-new-rom">5. Install the New ROM</h2>
+<ul>
+<li>In this section you will be using both the PC and the device.</li>
+<li>Confirm that you have completed the steps in the section above before proceeding, or else this section&rsquo;s steps will not work properly or cause you issues.</li>
+</ul>
+<ol>
+<li>On the device, from the TWRP recovery main menu tap &ldquo;Advanced&rdquo; in the bottom left corner. In the &ldquo;Advanced&rdquo; menu tap &ldquo;ADB Sideload&rdquo;.</li>
+</ol>
+<pre tabindex="0"><code>Main Menu &gt; Advanced &gt; ADB Sideload
+</code></pre><ol start="2">
+<li>On the device, in the &ldquo;ADB Sideload&rdquo; menu select &ldquo;Wipe Dalvik Cache&rdquo; and &ldquo;Wipe Cache&rdquo;, and then swipe right on the &ldquo;Swipe to Start Sideload&rdquo; button at the bottom of the screen (has three arrows pointing right) for the device to start sideloading.</li>
+</ol>
+<pre tabindex="0"><code>☑️ Wipe Dalvik Cache
+☑️ Wipe Cache
+_______________________________________
+|-------|                             |
+| &gt; &gt; &gt; |   Swipe to Start Sideload   |
+|-------|                             |
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+</code></pre><ol start="3">
+<li>Check that device is sercurely connected to the PC. On the PC in the command prompt or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>adb devices
+</code></pre><ol start="4">
+<li>
+<p>Check that the device staus is sideload and the device number matches the the device number from the previous sections. In command prompt or terminal, if it shows in sideload mode and the device number continue. If it does not show in sideload mode or device numbers do not match, troubleshoot; check the cable connection on both ends, change USB ports on the PC, replace the charging cable, or restart your PC and carefully repeat the preceeding steps.</p>
+</li>
+<li>
+<p>On the PC in the command prompt(with ADB) or terminal type:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>adb sideload C:\Users\exampleuser\examplefolder\examplefilename-devicecodename.zip
+</code></pre><ol start="6">
+<li>
+<p><strong>Note</strong>, the sideload process while running will stop abruptly around 50% (on both the PC and device). On the PC, in command prompt or terminal will show a message <code>Total xfer: 1.00x</code>. This message means the ROM (aka OS) has been successfully installed.</p>
+</li>
+<li>
+<p>The Android device now has your desired new ROM(aka OS) installed, but the bootloader should be locked before proceeding with rebooting into the OS to setup the device for daily use.</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> 
+ </p>
+<p><strong>Reference Articles for Installing the ROM:</strong></p>
+<p><a href="https://doc.e.foundation/devices/bacon/install">Installing /e/OS from Recovery - e Foundation documention</a></p>
+<p><a href="https://wiki.lineageos.org/devices/bacon/install#installing-lineageos-from-recovery">Installing LineageOS from Recovery - LineageOS Wiki</a></p>
+<p><a href="https://zetamods.com/adb-sideload-guide/">ADB Sideload: How to Use it to Sideload TWRP, OTA Updates, &amp; ROMs - ZetaMods</a></p>
+<p> 
+ </p>
+<h2 id="6-relock-the-bootloader">6. Relock the Bootloader</h2>
+<ul>
+<li>This section will be using both the PC and the device.</li>
+<li>Confirm that you have completed the preceeding section before proceeding with this section, or else this section&rsquo;s steps will not work properly and/or cause you issues.</li>
+</ul>
+<ol>
+<li>On the device, from the TWRP recovery main menu tap &ldquo;Reboot&rdquo; in the bottom right corner. In the &ldquo;Reboot&rdquo; menu tap &ldquo;Bootloader&rdquo;.</li>
+</ol>
+<pre tabindex="0"><code>Main Menu &gt; Reboot &gt; Bootloader
+</code></pre><ol start="2">
+<li>When the device has finished loading into the bootloader, check that the device is still connected to the PC by typing in the command prompt or terminal:</li>
+</ol>
+<pre tabindex="0"><code>fastboot devices
+</code></pre><ol start="3">
+<li>
+<p>Check that the device number from <em>fastboot devices</em> matches the the device number from the earlier <em>adb devices</em> command. If it matches, continue. If it does not match, troubleshoot; check the cable connection on both ends, change USB ports on the PC, replace the charging cable, or carefully repeat the preceeding steps.</p>
+</li>
+<li>
+<p>Check the lock status of the bootloader by typng in the command prompt or terminal:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>fastboot oem device-info
+</code></pre><ol start="5">
+<li>To relock the bootloader in the command prompt or terminal type:</li>
+</ol>
+<pre tabindex="0"><code>fastboot oem lock
+</code></pre><ol start="6">
+<li>If the device does not automatically reboot, on the PC type in the command prompt or terminal:</li>
+</ol>
+<pre tabindex="0"><code>fastboot reboot
+</code></pre><ol start="7">
+<li>Depending on ROM(akaOS), when the OS on the device has loaded, go to the &ldquo;Developer Options&rdquo; in the &ldquo;Settings&rdquo; app and <strong>disable</strong> OEM unlocking.
+Note, some Oneplus One (codename: bacon) ROMs(aka OSs) do not have the option to OEM unlocking setting. So if it is not present don&rsquo;t panic, because that indicates you can unlock the device without this step.</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Developer Options &gt; OEM Unlocking
+</code></pre><ol start="9">
+<li>Bootloader of the device has now been securely relocked.
+You may now disconnect your device from your PC, and can use it to follow the next sections.</li>
+</ol>
+<p> 
+ </p>
+<h2 id="7-post-setup-actions">7 Post Setup Actions</h2>
+<ul>
+<li>Taking these following actions significantly boosts your privacy and security when you use the Android device.</li>
+</ul>
+<p> 
+ </p>
+<h2 id="7-1-encrypt-the-device">7-1 Encrypt the Device</h2>
+<ul>
+<li>In this section you will only be using the device, and will need the charger too.</li>
+<li>Specifcially on /e/OS Nougat (Android 7.1.2) version, the device doesn&rsquo;t require the passcode to be setup before encrypting it.
+-If you have not already set a passcode for your device we will setup one in this section. <em>A encrypted device without a passcode is just silly.</em></li>
+<li>We will be doing a full-disk encryption as that is the most pravcy protecting encryption type for a device.</li>
+<li><strong>Warning:</strong> Disruptions during the encryption process may cause errors or raise issues. Disconnect and turn off the WiFi and set the device to airplane mode to avoid those issues.</li>
+<li><strong>Warning:</strong> If you are prone to loosing you device and do have have a consistent back-up policy it is not advised to do full-disk encryption on the device because Find-My-Device services will not work if the device is turned off.**</li>
+<li><strong>Warning:</strong> Alarms - When the the device is turned off and has full disc encryption, Alarms will not work, because the Clock app will not be able to decrypt the Android Device.</li>
+</ul>
+<ol>
+<li>
+<p>Plugin your charging cable to the device and a power source. The device battery needs to be at or above 80% full before you begin.</p>
+</li>
+<li>
+<p>On the device, In the &ldquo;Developer Options&rdquo; set &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo;. Note: If you do not set the device&rsquo;s &ldquo;Root Access&rdquo; to &ldquo;ADB only&rdquo; the rest of these following steps will not work.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Settings &gt; Security &gt; Encryption &gt; Encrypt phone
+</code></pre><p> 
+ </p>
+<p><strong>Reference Articles for Encrypting Android Devices:</strong>
+<a href="https://source.android.com/security/encryption/">Encryption - Android Source</a></p>
+<p><a href="https://docs.microsoft.com/en-us/mem/intune/user-help/encrypt-your-device-android">Encrypting your Android device - Microsoft Docs</a></p>
+<p><a href="https://www.hexnode.com/blogs/everything-you-need-to-know-about-android-encryption/">Everything you need to know about Android encryption - Hexnode</a></p>
+<p> 
+ </p>
+<h2 id="7-2-change-to-a-privacy-respecting-dns">7-2 Change to a Privacy Respecting DNS</h2>
+<ul>
+<li>In this section you will only be using the device.
+-Adblocking is a crtical part of on device privacy because 1st and 3rd party internet and app trackers can collect alot of data about you, your habbits, who you associate with, and more.</li>
+</ul>
+<ol>
+<li>
+<p>Open the devices Settings.</p>
+</li>
+<li>
+<p>Navigate to Network &amp; Internet &gt; Advanced &gt; Private DNS.</p>
+</li>
+<li>
+<p>Select Private DNS provider hostname.</p>
+</li>
+<li>
+<p>In the textbox, type in your prefered DNS choice from the ones listed below, and click &ldquo;Save&rdquo;. (I recomend Mullvad, Adguard, or AhaDNS.)</p>
+</li>
+</ol>
+<p> 
+ </p>
+<p><strong>Reference Articles for Changing to a Privacy Respecting DNS:</strong></p>
+<!-- raw HTML omitted -->
+<p><a href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/">Setup DNS over HTTPS and DNS over TLS - Mullvad</a></p>
+<p><a href="https://adguard-dns.com/en/public-dns.html">Connecting to a public AdGuard DNS server - Adguard</a></p>
+<p><a href="https://github.com/AhaDNS/setup-guides/blob/master/Android/Android.md">AhaDNS Android setup guide - AhaDNS</a></p>
+<p><a href="https://support.quad9.net/hc/en-us/articles/360046736911-Configure-Android-to-use-Private-DNS-feature-with-Quad9">Configure Android to use Private DNS feature with Quad9 (9.9.9.9) - Quad9 Support</a></p>
+<p><a href="https://developers.cloudflare.com/1.1.1.1/setting-up-1.1.1.1/android">Setting Up Cloudflare (1.1.1.1) DNS on Android - Cloudflare Documentaion</a></p>
+<p> 
+ </p>
+<h2 id="7-3-download-your-apps">7-3 Download Your Apps</h2>
+<p>If you have been using the basic default apps that where on your Googleified smartphone, then you should be able to use the basic default apps on your now De-Goolged smartphone. Basic non-Google apps come preinstalled on all De-Goolged ROM(aka OS).</p>
+<ul>
+<li>
+<p>If you do not find a app you need preinstalled on the device, then you must download it or an alternative to it from an app store, prefereably a privacy respecting appstore or frontend.</p>
+</li>
+<li>
+<p>To check app compatibility with MicroG, refer to the community curated list from Techlore&rsquo;s Project Plexus @ <a href="https://plexus.techlore.tech/">https://plexus.techlore.tech/</a></p>
+</li>
+<li>
+<p>Note DivestOS and LineageOS with MicroG only come with F-Droid appstore. So if you want to download any non-FOSS apps you will need to download Aurora Store (a private Google Play appstore frontend) through F-Droid, or install the Amazon AppStore. Alternatively, you can download the specific individual app apk from <a href="https://www.apkmirror.com/">APK Mirror</a>, and install the app apk manually on to the device.</p>
+</li>
+<li>
+<p>Note /e/OS comes with it own unique to it appstores that is managed by the E foundation (the developers of /e/OS). The /e/OS appstore is a privacy respecting frontend for both the Google Playstore and F-Droid, so you do not need to download a secondary app store to download from one or the other app store.</p>
+</li>
+</ul>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

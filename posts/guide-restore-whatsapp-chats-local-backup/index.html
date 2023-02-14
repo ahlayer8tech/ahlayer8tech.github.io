@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Restore Whatsapp Chats from Local Backup on De-Googled Android - Guide // Layer 8 Tech Stuff</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Andrew" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3c515c1473ba60424e046cfd164d618aa2d99cdd53c3e015fe17860c0657c0f1.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Restore Whatsapp Chats from Local Backup on De-Googled Android - Guide"/>
+<meta name="twitter:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation Reading 1. Create a WhatsApp Chat Backup 2. Save the WhatsApp Backup files to Downloads folder 3. Uninstall WhatsApp from the phone 4. Install WhatsApp onto the phone x. Transfer WhatsApp backup files to external storage from the phone x. Transfer WhatsApp backup files from external storage to the device 5."/>
+
+    <meta property="og:title" content="Restore Whatsapp Chats from Local Backup on De-Googled Android - Guide" />
+<meta property="og:description" content="Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation Reading 1. Create a WhatsApp Chat Backup 2. Save the WhatsApp Backup files to Downloads folder 3. Uninstall WhatsApp from the phone 4. Install WhatsApp onto the phone x. Transfer WhatsApp backup files to external storage from the phone x. Transfer WhatsApp backup files from external storage to the device 5." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/guide-restore-whatsapp-chats-local-backup/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-15T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="Andrew" /></a>
+      <h1>Layer 8 Tech Stuff</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Articles</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Article Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About Me</a>
+      </nav>
+      <p>Hi 👋, I am A.H., a computer technology, smartphones, cybersecurity, digital privacy, and digital forensics enthusiast. This website is dedicated for documenting these interests and sharing them on the web 😄.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ahlayer8tech" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:ahlayer8tech.vcaco@aleeas.com" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Contact Email</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Restore Whatsapp Chats from Local Backup on De-Googled Android - Guide</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 15, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          6 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="/tags/android/">Android</a>
+              <a class="tag" href="/tags/mobile/">mobile</a>
+              <a class="tag" href="/tags/privacy/">privacy</a>
+              <a class="tag" href="/tags/app/">app</a>
+              <a class="tag" href="/tags/debloated/">debloated</a>
+              <a class="tag" href="/tags/guide/">guide</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="authored-by-ah">Authored by AH</h4>
+<h3 id="license-notice">License Notice</h3>
+<p>This article is published under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#0-pre-preparation-reading">0. Pre-preparation Reading</a></li>
+<li><a href="#1-create-a-whatsapp-chat-backup">1. Create a WhatsApp Chat Backup</a></li>
+<li><a href="#2-save-the-whatsapp-backup-files-to-downloads-folder">2. Save the WhatsApp Backup files to Downloads folder</a></li>
+<li><a href="#3-uninstall-whatsapp-from-the-phone">3. Uninstall WhatsApp from the phone</a></li>
+<li><a href="#4-install-whatsapp-onto-the-phone">4. Install WhatsApp onto the phone</a></li>
+<li><a href="">x. Transfer WhatsApp backup files to external storage from the phone</a></li>
+<li><a href="">x. Transfer WhatsApp backup files from external storage to the device</a></li>
+<li><a href="#5-copy-whatsapp-backup-files-to-whatsapp-folder">5. Copy WhatsApp backup files to WhatsApp folder</a></li>
+<li><a href="#6-setup-whatsapp-on-the-phone">6. Setup WhatsApp on the phone</a></li>
+</ul>
+<p> 
+ </p>
+<h2 id="introduction">Introduction</h2>
+<p> 
+ </p>
+<h2 id="0-pre-preparation-reading">0. Pre-preparation Reading</h2>
+<p><strong>Reference docs and videos for restoring WhatsApp chat:</strong></p>
+<p><a href="https://faq.whatsapp.com/android/chats/how-to-restore-your-chat-history/?lang=en">How to restore your chat history - WhatsApp FAQ</a></p>
+<p><a href="https://youtu.be/watch?v=YWsfv__HPJ8">WhatsApp folder location changed in android phone - Nazeer Basha Shaik - Youtube</a></p>
+<p><a href="https://libreddit.pussthecat.org/r/CalyxOS/comments/sjlj2v/restore_whatsapp_data_chats_and_media_after/">Restore WhatsApp data (chats and media) after moving to CalyxOS? - r/CalyxOS</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> 
+ </p>
+<h2 id="1-create-a-whatsapp-chat-backup">1. Create a WhatsApp Chat Backup</h2>
+<ol>
+<li>
+<p>Open WhatsApp, and then tap on the hamberger menu in the top right corner of the app to access the settings menu.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_1.1.png" alt="create_chat_backup">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_1.2.png" alt="create_chat_backup"></p>
+</li>
+<li>
+<p>Tap on &ldquo;Chats&rdquo;, scroll to the bottom of that menu, and then tap on &ldquo;Chat backup&rdquo; near the bottom of the menu.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_2.1.png" alt="create_chat_backup">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_2.2.png" alt="create_chat_backup">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_2.3.png" alt="create_chat_backup"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;BACK UP&rdquo; button in the &ldquo;Chat backup&rdquo; menu. Wait for the app to backup all your messages and media. When the backup has completed, confirm the local time above the &ldquo;BACK UP&rdquo; button was the time you initiated the manual backup.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_3.1.png" alt="create_chat_backup">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_3.2.png" alt="create_chat_backup">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/create_chat_backup_3.3.png" alt="create_chat_backup"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="2-save-the-whatsapp-backup-files-to-downloads-folder">2. Save the WhatsApp Backup files to Downloads folder</h2>
+<pre tabindex="0"><code>Internal Storage/Android/media/com.whatsapp/WhatsApp/ &gt; Internal Storage/Downloads/WhatsApp/
+</code></pre><ol>
+<li>
+<p>Open the Files app (device filemanager), and then tap on the hamberger menu in the top left corner of the app. In that hamburger menu, tap on the device name (this example uses the Pixel 3a), above &ldquo;Bug Reports&rdquo; option and below the &ldquo;Downloads&rdquo; folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_1.1.png" alt="save_backup_files">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_1.2.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;Android&rdquo; folder, that is 2nd from the top of the folder directory.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_2.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;media&rdquo; folder, that is 2nd from the top of the folder directory.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_3.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;com.whatsapp&rdquo; folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_4.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;WhatsApp&rdquo; folder to verify that the folder has the &ldquo;Backup&rdquo;, &ldquo;Databases&rdquo;, and &ldquo;Media&rdquo; folders. When you verified that those folders have the backed up files, go back once, to where you see the &ldquo;Whatsapp&rdquo; folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_5.1.png" alt="save_backup_files">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_5.2.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>Tap and hold on the WhatsApp folder to select it (check mark on the left side next to the folder name).
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_6.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>Then tap on the hamberger menu in the top right corner of the app to access the menu, and select &ldquo;Copy to&rdquo;. Copy it your phones downloads folder (that location is the default it automatically chooses), and tap to the &ldquo;COPY&rdquo; button in the bottom left corner of the app. Wait for the &ldquo;Copying 1 item&rdquo; on the bottom of the screen to go away, that indicates the files have finished being copied to your chosen folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_7.1.png" alt="save_backup_files">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_7.2.png" alt="save_backup_files">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_7.3.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>Navigate to your copy of the WhatsApp backup files in your &ldquo;Downloads&rdquo; folder. Tap on the hamberger menu in the top left corner of the app. In that hamburger menu, tap on &ldquo;Downloads&rdquo; (this example uses the Pixel 3a), above the device name option and below the &ldquo;Documents&rdquo; folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_8.1.png" alt="save_backup_files">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_8.2.png" alt="save_backup_files"></p>
+</li>
+<li>
+<p>In that &ldquo;Downloads&rdquo; folder, tap on the &ldquo;WhatsApp&rdquo; folder to verify that the folder has the &ldquo;Backup&rdquo;, &ldquo;Databases&rdquo;, and &ldquo;Media&rdquo; folders. When you verified that those folders have the backed up files you can close out of the Files app.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_9.1.png" alt="save_backup_files">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/save_backup_files_9.2.png" alt="save_backup_files"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="3-uninstall-whatsapp-from-the-phone">3. Uninstall WhatsApp from the phone</h2>
+<ol>
+<li>
+<p>Open the &ldquo;Settings&rdquo; app, tap on &ldquo;Apps&rdquo; (3rd option from the top), scroll to the bottom of the apps menu, tap on all &ldquo;&gt;  See all XX apps&rdquo;,and then tap on &ldquo;WhatsApp&rdquo; (near the bottom of the menu).
+<img src="/Restore_Whatsapp_Chats_Local_Backup/uninstall_whatsapp_1.1.png" alt="uninstall_whatsapp">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/uninstall_whatsapp_1.2.png" alt="uninstall_whatsapp">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/uninstall_whatsapp_1.3.png" alt="uninstall_whatsapp"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;Unistall&rdquo; option (in the row 2nd option from the left), and when the unistall &ldquo;whatsApp&rdquo; prompt pops up tap on &ldquo;OK&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/uninstall_whatsapp_2.1.png" alt="uninstall_whatsapp">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/uninstall_whatsapp_2.2.png" alt="uninstall_whatsapp"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="4-install-whatsapp-onto-the-phone">4. Install WhatsApp onto the phone</h2>
+<ol>
+<li>
+<p>Open your app store app (this example uses the Aurora Store), tap on &ldquo;WhatsApp Messenger&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/install_whatsapp_1.png" alt="install_whatsapp"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;Install&rdquo; button at the bottom of the screen to install &ldquo;WhatsApp&rdquo;. The install button will then become a progress bar displaying the download status and then the install status. 
+<img src="/Restore_Whatsapp_Chats_Local_Backup/install_whatsapp_2.1.png" alt="install_whatsapp">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/install_whatsapp_2.2.png" alt="install_whatsapp"></p>
+</li>
+<li>
+<p>When the install &ldquo;WhatsApp&rdquo; prompt pops up tap on &ldquo;Install&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/install_whatsapp_3.png" alt="install_whatsapp"></p>
+</li>
+<li>
+<p>The installation of the app has completed when the prograss bar at the bottom of the screen will change to &ldquo;Open&rdquo;(the app).
+<img src="/Restore_Whatsapp_Chats_Local_Backup/install_whatsapp_4.png" alt="install_whatsapp"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="5-copy-whatsapp-backup-files-to-whatsapp-folder">5. Copy WhatsApp backup files to Whatsapp folder</h2>
+<pre tabindex="0"><code>Internal Storage/Downloads/WhatsApp/ &gt; Internal Storage/Android/media/com.whatsapp/WhatsApp/
+</code></pre><ol>
+<li>
+<p>Open the Files app (device filemanager), and then tap and hold on the WhatsApp folder to select it (check mark on the left side next to the folder name).
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_1.1.png" alt="copy_whatsapp_backup">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_1.2.png" alt="copy_whatsapp_backup"></p>
+</li>
+<li>
+<p>Then tap on the hamberger menu in the top right corner of the app to access the menu, and select &ldquo;Copy to&rdquo;. 
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_2.png" alt="copy_whatsapp_backup"></p>
+</li>
+<li>
+<p>Tap on the hamberger menu in the top left corner of the app. In that hamburger menu, tap on the device name (this example uses the Pixel 3a). Device name will be the only other option.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_3.png" alt="copy_whatsapp_backup"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;Android&rdquo; folder, that is 2nd from the top of the folder directory.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_4.png" alt="copy_whatsapp_backup"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;media&rdquo; folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_5.png" alt="copy_whatsapp_backup"></p>
+</li>
+<li>
+<p>Tap on the &ldquo;com.whatsapp&rdquo; folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_6.png" alt="copy_whatsapp_backup"></p>
+</li>
+<li>
+<p>Now that you are in Internal Storage/Android/media/com.whatsapp/ folder, and now tap to the &ldquo;COPY&rdquo; button in the bottom left corner of the app. <strong>IMPORTANT</strong>, this folder should be empty before you copy any files to it, or else issues may arise when copying tour back folder into it.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_7.png" alt="copy_whatsapp_backup"></p>
+</li>
+<li>
+<p>Wait for the &ldquo;Copying 1 item&rdquo; on the bottom of the screen to go away, that indicates the files have finished being copied to your chosen folder.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/copy_whatsapp_backup_8.png" alt="copy_whatsapp_backup"></p>
+</li>
+</ol>
+<p> 
+ </p>
+<h2 id="6-setup-whatsapp-on-the-phone">6. Setup WhatsApp on the phone</h2>
+<ol>
+<li>
+<p>Open WhatsApp, and tap on &ldquo;AGREE AND CONTINUE&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_1.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>Input your the phone you use for your WhatsApp account, to recive your 2FA code for your WhatsApp. Tap on the &ldquo;NEXT&rdquo; button when you have inputted your. 
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_2.1.png" alt="setup_whatsapp">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_2.2.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>In the pop-up confirm that you have typed the correct phone number by tapping on &ldquo;OK&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_3.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>Give WhatsApp&rsquo;s persmission to auotmatically detect the verifcation code by tapping on &ldquo;CONTINUE&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_4.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>In the pop-up asking you to &ldquo;Allow <strong>WhatsApp</strong> to send and view SMS messsages?&rdquo; tap &ldquo;ALLOW&rdquo;. WhatsApp will text message you the 2FA code.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_5.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>You will wait for WhatsApp to automatically dectect the 2FA verification code sent to your phone number. When WhatsApp has dectected your 2FA verification code it will enter it into the &ldquo;6-digit code&rdquo; box(near the top), and then verify it. When verifcation has successfully completed WhatsApp will go to the next setup step.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_6.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>Give WhatsApp&rsquo;s persmission to access your photos and other media on your phone and to deny access to your contacts, by tapping on &ldquo;CONTINUE&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_7.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>In the pop-up asking you to &ldquo;Allow <strong>WhatsApp</strong> to access your contacts?&rdquo; tap &ldquo;ALLOW&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_8.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>In the pop-up asking you to &ldquo;Allow <strong>WhatsApp</strong> to access your photos and media on your device?&rdquo; tap &ldquo;ALLOW&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_9.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>Give WhatsApp&rsquo;s persmission restore from a backup, by tapping on &ldquo;CONTINUE&rdquo;.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_10.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>WhatsApp will then check for backup files, and then when detected will display the day and time of the backup and the backup files total size. Tap the &ldquo;RESTORE&rdquo; button on the bottom left of the screen, so WhatsApp can begin to load the backup files into the app. A progress animation will play at the bottom of the screen untill all the messgaes in the backup have decrypted.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_11.1.png" alt="setup_whatsapp">
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_11.2.png" alt="setup_whatsapp"></p>
+</li>
+<li>
+<p>When WhatsApp has sucessfully compeletd decrypting all the messages from the backup, a check mark icon in a circle with with arrow icon at one end will display on th center bottom screen. Tap on the &ldquo;Next&rdquo; button(under the check mark icon) to continue to your WhatsApp messages.
+<img src="/Restore_Whatsapp_Chats_Local_Backup/setup_whatsapp_12.png" alt="setup_whatsapp"></p>
+</li>
+</ol>
+<p> 
+ </p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

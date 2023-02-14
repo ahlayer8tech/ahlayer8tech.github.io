@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Layer 8 Tech Stuff</title>
+    <link>/tags/linux/</link>
+    <description>Recent content in Linux on Layer 8 Tech Stuff</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Penetration Testing Wifi Pt.1 - Capture handshake using Airmon-ng - Kali Linux</title>
+      <link>/posts/pentest-wifi-airmon-ng-with-kali-linux-pt1/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/pentest-wifi-airmon-ng-with-kali-linux-pt1/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Pre-preparation Reading 0-2 Acquire necessary devices 0-3 Notes 1. Enable Monitor Mode 2. Scan for Networks 3. Scan Test Network 4. Capture Test Network WPA2 Handshake 5. Verify the captured WPA2 handshake 6. Stop Monitor Mode on WiFi adapter    Introduction This turorial intends to demostrate the first portion WiFi penetration testing using Airmon-ng manually to capture WPA2 handshake by showing each step of the processwith pictures.</description>
+    </item>
+    
+    <item>
+      <title>Flash Kali Linux Image onto USB Flash drive on Windows 10 PC - Guide</title>
+      <link>/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Pre-preparation Reading 0-2 Download the Necessary Files 0-3 Acquire necessary devices 1. Start BalenaEtcher 2. Select File to Flash 3. Select Target Drive 4. Flash Drive   Introduction This guide intends to provide a step-by-step guide with pictures of how create a bootable Linux usb.</description>
+    </item>
+    
+  </channel>
+</rss>

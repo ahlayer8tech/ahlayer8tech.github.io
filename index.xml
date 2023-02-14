@@ -6,7 +6,87 @@
     <description>Recent content on Layer 8 Tech Stuff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Penetration Testing Wifi Pt.1 - Capture handshake using Airmon-ng - Kali Linux</title>
+      <link>/posts/pentest-wifi-airmon-ng-with-kali-linux-pt1/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/pentest-wifi-airmon-ng-with-kali-linux-pt1/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Pre-preparation Reading 0-2 Acquire necessary devices 0-3 Notes 1. Enable Monitor Mode 2. Scan for Networks 3. Scan Test Network 4. Capture Test Network WPA2 Handshake 5. Verify the captured WPA2 handshake 6. Stop Monitor Mode on WiFi adapter    Introduction This turorial intends to demostrate the first portion WiFi penetration testing using Airmon-ng manually to capture WPA2 handshake by showing each step of the processwith pictures.</description>
+    </item>
+    
+    <item>
+      <title>Flash Kali Linux Image onto USB Flash drive on Windows 10 PC - Guide</title>
+      <link>/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-flash-kali-linux-image-onto-usb-flash-drive-windows-10/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Pre-preparation Reading 0-2 Download the Necessary Files 0-3 Acquire necessary devices 1. Start BalenaEtcher 2. Select File to Flash 3. Select Target Drive 4. Flash Drive   Introduction This guide intends to provide a step-by-step guide with pictures of how create a bootable Linux usb.</description>
+    </item>
+    
+    <item>
+      <title>Create &amp; Publish a Github Pages website - Guide</title>
+      <link>/posts/guide-publish-create-github-pages-site/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-publish-create-github-pages-site/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation reading 1. Login onto GitHub 2. Creating a repository for the site 3. Creating the test site 4. Uploading your website files and folders   Introduction This guide intends to provide a step-by-step guide with pictures of how to publish a GitHub Pages website and create the corresponding repository for it.</description>
+    </item>
+    
+    <item>
+      <title>Restore Whatsapp Chats from Local Backup on De-Googled Android - Guide</title>
+      <link>/posts/guide-restore-whatsapp-chats-local-backup/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-restore-whatsapp-chats-local-backup/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation Reading 1. Create a WhatsApp Chat Backup 2. Save the WhatsApp Backup files to Downloads folder 3. Uninstall WhatsApp from the phone 4. Install WhatsApp onto the phone x. Transfer WhatsApp backup files to external storage from the phone x. Transfer WhatsApp backup files from external storage to the device 5.</description>
+    </item>
+    
+    <item>
+      <title>Flash De-Googled ROM GrapheneOS on a Pixel 3a - Guide</title>
+      <link>/posts/guide-flash-de-googled-rom-grapheneos-on-pixel-3a/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-flash-de-googled-rom-grapheneos-on-pixel-3a/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Back-up your data from the Android device 1. Enable USB Debugging and Allow OEM Unlocking on the Android device 2. Install Android Device Driver - Windows Only - Manually 3. Install Android Platform Tools - Linux Only 4. Install GrapheneOS Image onto the Android device - Web Installer 5.</description>
+    </item>
+    
+    <item>
+      <title>Flash De-Googled ROM CalyxOS on a Pixel 3a - Guide</title>
+      <link>/posts/guide-flash-de-googled-rom-calyxos-on-pixel-3a/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-flash-de-googled-rom-calyxos-on-pixel-3a/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Introduction 0. Pre-preparation 0-1 Back-up your data from the Android device 0-2 Download the Necessary Files 1. Enable USB Debugging and Allow OEM Unlocking on the Android device 2. Install Android Device Driver - Windows Only - Manually 3. Install Android Platform Tools - Linux Only 4.</description>
+    </item>
+    
+    <item>
+      <title>Adding a Custom Hosts File to Android - Guide</title>
+      <link>/posts/guide-add-custom-hosts-file-to-android/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-add-custom-hosts-file-to-android/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Prologue Introduction 0. Pre-preparation 0-1 Download the Necessary Files 0-2 Confirm ADB and Android Device Drivers Installed and Functioning 7-1 Add a Custom Hosts File    Prologue I have been serious about modifying my personal devices since 2017. Over the years I hadn’t found a guide that went over all the technical steps that I wanted, so I wrote my own guide.</description>
+    </item>
+    
+    <item>
+      <title>Flash De-Goolged Android ROM on a Oneplus One - Guide</title>
+      <link>/posts/guide-flash-de-googled-rom-on-oneplus-one/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/guide-flash-de-googled-rom-on-oneplus-one/</guid>
+      <description>Authored by AH License Notice This article is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Table of Contents  Prologue Introduction 0. Pre-preparation 0-1 Download the Necessary Files 0-2 Confirm ADB and Android Device Drivers Installed and Functioning 0-3 Back-up your data from the Android device 0-4 Screen Sleep Time for Convience 1. Check Device Lock Status 2. Unlock the Bootloader 3. Install a Custom Recovery 4.</description>
+    </item>
+    
     <item>
       <title>Install and Set Up ADB and Android Drivers on PC &amp; Enable and Allow USB Debug and OEM Unlock on Android Device - Guide</title>
       <link>/posts/guide-install-setup-abd-android-drivers-pc-enable-usb-debug-allow-oem-unlock-device/</link>
@@ -24,8 +104,8 @@ Table of Contents  Introduction Prerequisites 1. Set Up ADB on PC 1-1 On Windows
       
       <guid>/about/</guid>
       <description>Hi 👋,
-I am AH, a computer technology, smartphone technology, cybersecurity, digital privacy, and digital forensics enthusiast. With a special interest in FOSS (Free and Open Source Software).
-Why this blog exists This website is dedicated to documenting those aforementioned interests and sharing them on the internet 😄. My objective is to compile the resources I have used and knowledge I have learned throughout the years onto a quick and convient place to access.</description>
+I am A.H., a computer technology, smartphone, cybersecurity, digital privacy, and digital forensics enthusiast. With a special interest in FOSS (Free and Open Source Software).
+Table of Contents  Why this blog exists How I started and why Contact me  Why this blog exists This website is dedicated for documenting those aforementioned interests and sharing them on the internet 😄. My objective is to compile the resources I have used and knowledge I have learned throughout the years onto a quick and convient place to access.</description>
     </item>
     
   </channel>

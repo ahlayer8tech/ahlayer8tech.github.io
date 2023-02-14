@@ -6,40 +6,184 @@
     <description>Recent content in Tags on Layer 8 Tech Stuff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Android</title>
-      <link>/tags/android/</link>
-      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <title>Airmon-ng</title>
+      <link>/tags/airmon-ng/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>/tags/android/</guid>
+      <guid>/tags/airmon-ng/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kali</title>
+      <link>/tags/kali/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/kali/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pentest</title>
+      <link>/tags/pentest/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pentest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WiFi </title>
+      <link>/tags/wifi/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wifi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flash</title>
+      <link>/tags/flash/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/flash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>guide</title>
       <link>/tags/guide/</link>
-      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/guide/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>mobile</title>
-      <link>/tags/mobile/</link>
-      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <title>open-source</title>
+      <link>/tags/open-source/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>/tags/mobile/</guid>
+      <guid>/tags/open-source/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PC</title>
       <link>/tags/pc/</link>
-      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>/tags/github/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internet</title>
+      <link>/tags/internet/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web-development</title>
+      <link>/tags/web-development/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>/tags/website/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>/tags/android/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>app</title>
+      <link>/tags/app/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debloated</title>
+      <link>/tags/debloated/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/debloated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mobile</title>
+      <link>/tags/mobile/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mobile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>privacy</title>
+      <link>/tags/privacy/</link>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/privacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>adblock</title>
+      <link>/tags/adblock/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/adblock/</guid>
       <description></description>
     </item>
     
